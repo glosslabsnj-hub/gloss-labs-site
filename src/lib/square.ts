@@ -32,7 +32,16 @@ export interface AddOn {
   durationMinutes: number;
 }
 
-const ADD_ON_NAMES = ["PET HAIR REMOVAL (ADD ON)", "ODOR REMOVAL (ADD ON)", "UPHOLSTERY SHAMPOO", "TRIM RESTORATION"];
+const ADD_ON_NAMES = [
+  "PET HAIR REMOVAL (ADD ON)",
+  "ODOR REMOVAL (ADD ON)",
+  "UPHOLSTERY SHAMPOO",
+  "TRIM RESTORATION",
+  "HEADLIGHT RESTORATION (ADD ON)",
+  "ENGINE BAY DETAIL (ADD ON)",
+  "WINDSHIELD CERAMIC COATING (ADD ON)",
+  "WHEEL CERAMIC COATING (ADD ON)",
+];
 
 export async function getBookableServices(): Promise<{ services: ServiceVariation[]; addOns: AddOn[] }> {
   const data = await squareFetch("/catalog/search", {
