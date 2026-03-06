@@ -4,21 +4,35 @@
       <stop offset="0%" stop-color="#3B82F6"/>
       <stop offset="100%" stop-color="#60A5FA"/>
     </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
   </defs>
 
-  <!-- G monogram - clean, bold -->
-  <g transform="translate(60, 52)">
-    <!-- Circle arc (open G shape) -->
-    <path d="M6,-44 A44,44 0 1,0 6,44" fill="none" stroke="url(#accentGrad)" stroke-width="6" stroke-linecap="round"/>
-    <!-- Crossbar -->
-    <line x1="6" y1="0" x2="28" y2="0" stroke="url(#accentGrad)" stroke-width="6" stroke-linecap="round"/>
-    <!-- Shine accent -->
-    <circle cx="32" cy="-32" r="3.5" fill="#60A5FA" opacity="0.6"/>
-    <circle cx="32" cy="-32" r="1.5" fill="white" opacity="0.9"/>
-  </g>
+  <!-- Hexagonal badge shape -->
+  <polygon points="60,4 110,30 110,90 60,116 10,90 10,30"
+           fill="#0D1929" stroke="url(#accentGrad)" stroke-width="2"/>
+  <polygon points="60,10 105,33 105,87 60,110 15,87 15,33"
+           fill="none" stroke="url(#accentGrad)" stroke-width="0.5" opacity="0.3"/>
 
-  <!-- GLOSS text below -->
-  <text x="60" y="112" fill="white" text-anchor="middle"
-        font-family="'Jost', 'Helvetica Neue', Arial, sans-serif"
-        font-size="14" font-weight="600" letter-spacing="6">GLOSS</text>
+  <!-- GL monogram -->
+  <text x="60" y="72" fill="url(#textGrad)" text-anchor="middle"
+        font-family="'Bodoni Moda', 'Didot', Georgia, serif"
+        font-size="48" font-weight="700" letter-spacing="2">GL</text>
+
+  <!-- Water drop accent -->
+  <path d="M88,22 Q90,17 92,22 Q92,25.5 90,26.5 Q88,25.5 88,22 Z" fill="url(#dropGrad)" opacity="0.7"/>
+
+  <!-- Shine sparkle -->
+  <circle cx="92" cy="18" r="1.5" fill="white" opacity="0.6"/>
+
+  <!-- Subtle tagline -->
+  <text x="60" y="92" fill="url(#accentGrad)" text-anchor="middle"
+        font-family="'Jost', sans-serif"
+        font-size="7" font-weight="300" letter-spacing="4">AUTO</text>
 </svg>

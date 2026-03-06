@@ -66,7 +66,7 @@ export function ServiceCard({ title, price, description, icon, duration }: Servi
       <div className="flex items-end justify-between">
         <div>
           <span className="text-xs text-white/30 uppercase tracking-wider font-[family-name:var(--font-body)]">Starting at</span>
-          <p className="text-2xl font-bold text-gradient-accent">{price}</p>
+          <p className="text-2xl font-bold text-accent">{price}</p>
         </div>
         <span className="text-accent/50 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

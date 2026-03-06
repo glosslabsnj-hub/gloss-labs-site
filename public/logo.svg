@@ -14,34 +14,42 @@
       <stop offset="80%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
   </defs>
 
-  <!-- G monogram mark -->
-  <g transform="translate(44, 50)">
-    <!-- Outer circle (broken/open) -->
-    <path d="M0,-38 A38,38 0 1,1 -5,-38" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
-    <!-- Inner crossbar of G -->
-    <line x1="2" y1="0" x2="22" y2="0" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
-    <!-- Shine dot -->
-    <circle cx="26" cy="-28" r="2.5" fill="#60A5FA" opacity="0.7"/>
-    <circle cx="26" cy="-28" r="1" fill="white" opacity="0.9"/>
+  <!-- GL hexagonal badge -->
+  <g transform="translate(42, 50)">
+    <polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20"
+             fill="#0D1929" stroke="url(#accentGrad)" stroke-width="1.8"/>
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5"
+             fill="none" stroke="url(#accentGrad)" stroke-width="0.4" opacity="0.3"/>
+    <!-- GL letters -->
+    <text x="0" y="8" fill="white" text-anchor="middle"
+          font-family="'Bodoni Moda', 'Didot', Georgia, serif"
+          font-size="32" font-weight="700" letter-spacing="1">GL</text>
+    <!-- Water drop -->
+    <path d="M28,-22 Q29.5,-26 31,-22 Q31,-19.5 29.5,-19 Q28,-19.5 28,-22 Z" fill="url(#dropGrad)" opacity="0.6"/>
+    <circle cx="31" cy="-26" r="1.2" fill="white" opacity="0.5"/>
   </g>
 
   <!-- GLOSS text -->
-  <text x="100" y="52" fill="url(#textMain)"
+  <text x="96" y="52" fill="url(#textMain)"
         font-family="'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif"
-        font-size="52" font-weight="700" letter-spacing="8">GLOSS</text>
+        font-size="48" font-weight="700" letter-spacing="8">GLOSS</text>
 
   <!-- LABS text -->
-  <text x="355" y="52" fill="url(#accentGrad)"
+  <text x="348" y="52" fill="url(#accentGrad)"
         font-family="'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif"
-        font-size="52" font-weight="300" letter-spacing="8">LABS</text>
+        font-size="48" font-weight="300" letter-spacing="8">LABS</text>
 
   <!-- Accent underline -->
-  <line x1="100" y1="64" x2="470" y2="64" stroke="url(#lineGrad)" stroke-width="0.8"/>
+  <line x1="96" y1="64" x2="468" y2="64" stroke="url(#lineGrad)" stroke-width="0.8"/>
 
   <!-- Tagline -->
-  <text x="285" y="82" fill="#94A3B8" text-anchor="middle"
+  <text x="282" y="82" fill="#94A3B8" text-anchor="middle"
         font-family="'Jost', 'Helvetica Neue', sans-serif"
         font-size="9" font-weight="300" letter-spacing="5">PREMIUM AUTO DETAILING</text>
 </svg>
