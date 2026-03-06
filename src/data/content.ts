@@ -53,9 +53,9 @@ export const services: Service[] = [
   {
     title: "Exterior Wash",
     squareName: "EXTERIOR WASH",
-    price: "$120",
-    priceSuv: "$150",
-    priceTruck: "$170",
+    price: "$150",
+    priceSuv: "$180",
+    priceTruck: "$210",
     description:
       "Safe, thorough hand wash to refresh your paint and wheels without marring. Foam pre-soak, pH-neutral hand wash with plush microfiber mitts, wheels and tires cleaned, touch-safe blow dry, and exterior glass cleaned streak-free. Safe for ceramic-coated vehicles.",
     shortDescription:
@@ -76,9 +76,9 @@ export const services: Service[] = [
   {
     title: "Interior Detail",
     squareName: "INTERIOR DETAIL",
-    price: "$200",
-    priceSuv: "$230",
-    priceTruck: "$300",
+    price: "$250",
+    priceSuv: "$290",
+    priceTruck: "$350",
     description:
       "Reset your vehicle's interior to a fresh, clean condition. Full vacuum, compressed air cleaning of cracks and crevices, thorough wipe-down of all plastics, vinyl, and leather, steam cleaning of high-touch areas, and glass cleaned inside and out. Does not include carpet shampooing (available as add-on).",
     shortDescription:
@@ -98,9 +98,9 @@ export const services: Service[] = [
   {
     title: "Interior & Exterior Combo",
     squareName: "INTERIOR & EXTERIOR COMBO",
-    price: "$280",
-    priceSuv: "$330",
-    priceTruck: "$380",
+    price: "$350",
+    priceSuv: "$410",
+    priceTruck: "$480",
     description:
       "Complete inside-and-out refresh for that new-car feel. Combines our full Interior Detail with our Exterior Wash for total vehicle transformation. Safe for coated vehicles. Does not include shampoo extraction, clay bar, or paint correction.",
     shortDescription:
@@ -120,9 +120,9 @@ export const services: Service[] = [
   {
     title: "Wash, Clay & Seal",
     squareName: "WASH CLAY & SEAL",
-    price: "$200",
-    priceSuv: "$250",
-    priceTruck: "$280",
+    price: "$220",
+    priceSuv: "$270",
+    priceTruck: "$310",
     description:
       "Premium maintenance detail to restore gloss and add lasting protection. Includes thorough hand wash, iron and bug decontamination, clay bar treatment, and application of a high-quality paint sealant for up to 4-6 months of protection, deep shine, and hydrophobic water beading.",
     shortDescription:
@@ -195,8 +195,8 @@ export const addOns: AddOn[] = [
   { title: "Upholstery Shampoo", price: "From $70", description: "Deep carpet and seat shampoo extraction. Sedan $70, SUV $90." },
   { title: "Pet Hair Removal", price: "From $75", description: "Specialized extraction of embedded pet hair. Moderate $75, Heavy $125. Must book with interior service." },
   { title: "Odor Removal", price: "$80", description: "Deep cleaning + ozone treatment to neutralize odors at the source. Smoke, pets, spills." },
-  { title: "Headlight Restoration", price: "$99", description: "Restore foggy, yellowed headlights to crystal-clear clarity. Per pair." },
-  { title: "Engine Bay Detail", price: "$69", description: "Degrease, steam clean, and dress your engine bay for a like-new look." },
+  { title: "Headlight Restoration", price: "$120", description: "Restore foggy, yellowed headlights to crystal-clear clarity. Per pair." },
+  { title: "Engine Bay Detail", price: "$85", description: "Degrease, steam clean, and dress your engine bay for a like-new look." },
   { title: "Trim Restoration", price: "Quote", description: "Restore faded plastics to OEM black with ceramic trim coating for long-lasting UV protection." },
   { title: "Windshield Ceramic Coating", price: "$39", description: "Hydrophobic ceramic coating on windshield for improved visibility in rain." },
   { title: "Wheel Ceramic Coating", price: "$79", description: "Ceramic coating on all 4 wheels for easier cleaning and brake dust protection." },
