@@ -29,7 +29,7 @@ export const siteInfo = {
     sunday: "Sunday: Closed",
   },
   mobileService: "All of New Jersey. $50 service fee beyond 25 miles.",
-  squareWidgetId: "dvhqf1pkf4hbig/MLX0AATCTSD8M",
+  squareBookingUrl: "https://book.squareup.com/appointments/dvhqf1pkf4hbig/MLX0AATCTSD8M",
   googleReviewsUrl: "https://www.google.com/maps/place/Gloss+Labs+Auto+NJ/@40.1962857,-74.6824042,17z",
 };
 
@@ -156,13 +156,13 @@ export const services: Service[] = [
   },
   {
     title: "Ceramic Coating",
-    price: "From $600",
-    priceSuv: "From $600",
-    priceTruck: "From $600",
+    price: "Quote",
+    priceSuv: "Quote",
+    priceTruck: "Quote",
     description:
-      "Professional ceramic coating for long-lasting paint protection. Choose from 1, 3, or 5 year durability options. Pricing includes prep wash and decontamination. Add 1-Step or 2-Step paint correction for best results. Prices vary based on correction level and coating duration selected.",
+      "Professional ceramic coating for long-lasting paint protection. Choose from 1, 3, or 5 year durability options. Pricing includes prep wash and decontamination. Add 1-Step or 2-Step paint correction for best results. Price varies based on vehicle size, correction level, and coating duration selected.",
     shortDescription:
-      "1, 3, or 5 year ceramic protection. Prep included. Add paint correction for best results.",
+      "1, 3, or 5 year ceramic protection. Price varies based on vehicle, correction level, and coating duration.",
     icon: "shield",
     duration: "Full day",
     category: "protection",

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { siteInfo } from "@/data/content";
 
 export function SquareBooking() {
-  const squareUrl = `https://square.site/book/${siteInfo.squareWidgetId}`;
+  const squareUrl = siteInfo.squareBookingUrl;
 
   return (
     <div className="text-center py-8">

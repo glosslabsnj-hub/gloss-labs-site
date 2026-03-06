@@ -61,7 +61,7 @@ export default function HomePage() {
 
           <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
-              href={`https://square.site/book/${siteInfo.squareWidgetId}`}
+              href={siteInfo.squareBookingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 80} direction="up" distance={30}>
                 <ServiceCard
@@ -143,13 +143,13 @@ export default function HomePage() {
           </div>
 
           <ScrollReveal delay={500}>
-            <div className="text-center mt-10 md:mt-12">
-              <p className="text-white/30 text-xs md:text-sm mb-4 font-[family-name:var(--font-body)]">
-                Prices shown are starting rates for sedans. SUV and truck pricing available on request.
+            <div className="text-center mt-8 md:mt-10">
+              <p className="text-white/25 text-xs mb-5 font-[family-name:var(--font-body)]">
+                Sedan pricing shown. SUV &amp; truck rates on the services page.
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 text-accent text-sm tracking-wider hover:gap-4 transition-all duration-300 cursor-pointer font-[family-name:var(--font-body)]"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-accent/20 rounded-full text-accent text-sm tracking-wider hover:border-accent/40 hover:bg-accent/5 transition-all duration-300 cursor-pointer font-[family-name:var(--font-body)]"
               >
                 VIEW ALL SERVICES &amp; PRICING
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -279,7 +279,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a
-                href={`https://square.site/book/${siteInfo.squareWidgetId}`}
+                href={siteInfo.squareBookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-accent to-accent-light text-white font-bold tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]"
