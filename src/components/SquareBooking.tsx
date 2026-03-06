@@ -23,8 +23,8 @@ export function SquareBooking() {
       >
         {/* Loading state while Square widget loads */}
         <div className="text-center">
-          <div className="w-12 h-12 border-2 border-gold/20 border-t-gold rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-white/40 text-sm">Loading booking calendar...</p>
+          <div className="w-12 h-12 border-2 border-accent/20 border-t-accent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-white/40 text-sm font-[family-name:var(--font-body)]">Loading booking calendar...</p>
         </div>
       </div>
     </div>

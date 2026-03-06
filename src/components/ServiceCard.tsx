@@ -46,29 +46,29 @@ export function ServiceCard({ title, price, description, icon, duration }: Servi
   return (
     <Link
       href="/services"
-      className="group glass-card rounded-2xl p-8 hover:border-gold/30 transition-all duration-500 cursor-pointer"
+      className="group glass-card rounded-2xl p-8 hover:border-accent/30 transition-all duration-500 cursor-pointer"
     >
       <div className="flex items-start justify-between mb-5">
-        <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold/20 transition-colors duration-300">
+        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent/20 transition-colors duration-300">
           {icons[icon]}
         </div>
-        <span className="text-gold text-xs tracking-wider bg-gold/10 px-3 py-1 rounded-full">
+        <span className="text-accent text-xs tracking-wider bg-accent/10 px-3 py-1 rounded-full font-[family-name:var(--font-body)]">
           {duration}
         </span>
       </div>
 
-      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold transition-colors duration-300">
+      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
         {title}
       </h3>
 
-      <p className="text-white/40 text-sm leading-relaxed mb-4">{description}</p>
+      <p className="text-white/40 text-sm leading-relaxed mb-4 font-[family-name:var(--font-body)]">{description}</p>
 
       <div className="flex items-end justify-between">
         <div>
-          <span className="text-xs text-white/30 uppercase tracking-wider">Starting at</span>
-          <p className="text-2xl font-bold text-gradient-gold">{price}</p>
+          <span className="text-xs text-white/30 uppercase tracking-wider font-[family-name:var(--font-body)]">Starting at</span>
+          <p className="text-2xl font-bold text-gradient-accent">{price}</p>
         </div>
-        <span className="text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300">
+        <span className="text-accent/50 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

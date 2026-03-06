@@ -13,7 +13,7 @@ export function TestimonialCard({ name, vehicle, text, rating }: TestimonialCard
         {Array.from({ length: rating }).map((_, i) => (
           <svg
             key={i}
-            className="w-4 h-4 text-gold"
+            className="w-4 h-4 text-accent"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -22,19 +22,19 @@ export function TestimonialCard({ name, vehicle, text, rating }: TestimonialCard
         ))}
       </div>
 
-      <p className="text-white/60 text-sm leading-relaxed mb-6 italic">
+      <p className="text-white/60 text-sm leading-relaxed mb-6 italic font-[family-name:var(--font-body)]">
         &ldquo;{text}&rdquo;
       </p>
 
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center">
-          <span className="text-black font-bold text-sm">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-glow flex items-center justify-center">
+          <span className="text-white font-bold text-sm">
             {name.charAt(0)}
           </span>
         </div>
         <div>
           <p className="text-white font-semibold text-sm">{name}</p>
-          <p className="text-white/30 text-xs">{vehicle}</p>
+          <p className="text-white/30 text-xs font-[family-name:var(--font-body)]">{vehicle}</p>
         </div>
       </div>
     </div>

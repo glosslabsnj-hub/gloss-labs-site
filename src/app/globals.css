@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #000000;
+  --color-background: #0A1628;
   --color-foreground: #ffffff;
-  --color-gold: #c9a84c;
-  --color-gold-light: #e8d48b;
-  --color-gold-dark: #9a7b2e;
-  --color-charcoal: #1a1a1a;
-  --color-slate: #2a2a2a;
-  --color-muted: #888888;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: #3B82F6;
+  --color-accent-light: #60A5FA;
+  --color-accent-glow: #2563EB;
+  --color-silver: #CBD5E1;
+  --color-silver-dark: #94A3B8;
+  --color-chrome: #E2E8F0;
+  --color-card: #111827;
+  --color-card-border: rgba(59,130,246,0.15);
+  --color-charcoal: #0F1D32;
+  --color-slate: #1E293B;
+  --color-muted: #94A3B8;
+  --font-heading: 'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif;
+  --font-body: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 * {
@@ -18,40 +23,44 @@
 }
 
 body {
-  background: #000000;
+  background: #0A1628;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Gold gradient text utility */
-.text-gradient-gold {
-  background: linear-gradient(135deg, #c9a84c 0%, #e8d48b 50%, #c9a84c 100%);
+/* Blue-to-silver gradient text utility */
+.text-gradient-accent {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 40%, #CBD5E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* Glow effect */
-.glow-gold {
-  box-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 0 0 40px rgba(201, 168, 76, 0.1);
+.glow-accent {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
 }
 
 /* Glass card */
 .glass-card {
-  background: rgba(26, 26, 26, 0.7);
+  background: rgba(17, 24, 39, 0.7);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.12);
 }
 
 .glass-card:hover {
-  background: rgba(30, 30, 30, 0.8);
-  border-color: rgba(201, 168, 76, 0.25);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(201, 168, 76, 0.05);
+  background: rgba(22, 30, 48, 0.8);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.05);
 }
 
 /* Animated underline */
@@ -65,7 +74,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #c9a84c, #e8d48b);
+  background: linear-gradient(90deg, #3B82F6, #CBD5E1);
   transition: width 0.3s ease;
 }
 .animated-underline:hover::after {
@@ -100,19 +109,19 @@ html {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 76, 0.1) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 3s ease infinite;
 }
 
-/* Gold line pulse */
-@keyframes goldPulse {
+/* Accent pulse */
+@keyframes accentPulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.8; }
 }
 
-.gold-pulse {
-  animation: goldPulse 3s ease-in-out infinite;
+.accent-pulse {
+  animation: accentPulse 3s ease-in-out infinite;
 }
 
 /* Parallax-like background attachment for desktop */
@@ -142,11 +151,11 @@ html {
 
 /* Drop shadow for SVG logos */
 .logo-glow {
-  filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.3));
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
 }
 
 /* Selection color */
 ::selection {
-  background: rgba(201, 168, 76, 0.3);
+  background: rgba(59, 130, 246, 0.3);
   color: #ffffff;
 }

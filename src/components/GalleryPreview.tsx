@@ -13,18 +13,18 @@ const galleryImages = [
 
 export function GalleryPreview() {
   return (
-    <section className="py-24 md:py-32 bg-black relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: "radial-gradient(circle at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%)",
+        backgroundImage: "radial-gradient(circle at 20% 80%, rgba(59,130,246,0.08) 0%, transparent 50%)",
       }} />
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="text-gold text-xs tracking-[0.3em] uppercase">Our Work</span>
+          <span className="text-accent text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-body)]">Our Work</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">
-            The <span className="text-gradient-gold">Results</span> Speak
+            The <span className="text-gradient-accent">Results</span> Speak
           </h2>
-          <p className="text-white/40 max-w-xl mx-auto">
+          <p className="text-white/40 max-w-xl mx-auto font-[family-name:var(--font-body)]">
             Real transformations from real clients. No filters, no tricks, just
             the quality you can expect every single time.
           </p>
@@ -48,10 +48,10 @@ export function GalleryPreview() {
                   loading="lazy"
                 />
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/80 via-[#0A1628]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                   <p className="text-white text-sm font-medium">{img.alt}</p>
-                  <span className="text-gold text-xs tracking-wider">VIEW GALLERY</span>
+                  <span className="text-accent text-xs tracking-wider font-[family-name:var(--font-body)]">VIEW GALLERY</span>
                 </div>
               </div>
             </Link>
@@ -61,7 +61,7 @@ export function GalleryPreview() {
         <div className="text-center mt-12">
           <Link
             href="/gallery"
-            className="inline-flex items-center gap-3 px-8 py-4 border border-gold/30 text-gold font-semibold text-sm tracking-wider rounded-full hover:bg-gold/10 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center gap-3 px-8 py-4 border border-accent/30 text-accent font-semibold text-sm tracking-wider rounded-full hover:bg-accent/10 transition-all duration-300 cursor-pointer"
           >
             VIEW FULL GALLERY
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

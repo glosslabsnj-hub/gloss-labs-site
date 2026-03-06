@@ -24,7 +24,6 @@ export function QuoteForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Build mailto fallback (no backend yet)
     const subject = `Quote Request: ${data.get("service")} - ${data.get("vehicle_year")} ${data.get("vehicle_make")}`;
     const body = [
       `Name: ${data.get("name")}`,
@@ -33,6 +32,7 @@ export function QuoteForm() {
       `Vehicle: ${data.get("vehicle_year")} ${data.get("vehicle_make")} ${data.get("vehicle_model")}`,
       `Type: ${data.get("vehicle_type")}`,
       `Service: ${data.get("service")}`,
+      `Location: ${data.get("location")}`,
       `Notes: ${data.get("notes")}`,
     ].join("\n");
 
@@ -45,13 +45,13 @@ export function QuoteForm() {
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+        <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h3 className="text-2xl font-bold text-white mb-2">Quote Request Sent!</h3>
-        <p className="text-white/40">
+        <p className="text-white/40 font-[family-name:var(--font-body)]">
           We&apos;ll get back to you within a few hours with your personalized quote.
         </p>
       </div>
@@ -59,8 +59,8 @@ export function QuoteForm() {
   }
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:border-gold/50 focus:outline-none focus:ring-1 focus:ring-gold/30 transition-colors duration-300 text-sm";
-  const labelClass = "block text-white/60 text-sm mb-2";
+    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/30 transition-colors duration-300 text-sm font-[family-name:var(--font-body)]";
+  const labelClass = "block text-white/60 text-sm mb-2 font-[family-name:var(--font-body)]";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -83,7 +83,7 @@ export function QuoteForm() {
 
       {/* Vehicle Info */}
       <div className="pt-2">
-        <h3 className="text-white/70 text-xs uppercase tracking-wider mb-4">Vehicle Information</h3>
+        <h3 className="text-white/70 text-xs uppercase tracking-wider mb-4 font-[family-name:var(--font-body)]">Vehicle Information</h3>
         <div className="grid grid-cols-3 gap-4 mb-4">
           <div>
             <label htmlFor="vehicle_year" className={labelClass}>Year</label>
@@ -121,6 +121,17 @@ export function QuoteForm() {
         </select>
       </div>
 
+      {/* Location preference */}
+      <div>
+        <label htmlFor="location" className={labelClass}>Preferred Location</label>
+        <select id="location" name="location" required className={inputClass}>
+          <option value="">Select preference...</option>
+          <option value="In-Shop (Hamilton NJ)">In-Shop (18 Yorkshire Rd, Hamilton)</option>
+          <option value="Mobile (You come to me)">Mobile (You come to me)</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+
       {/* Notes */}
       <div>
         <label htmlFor="notes" className={labelClass}>Additional Notes (optional)</label>
@@ -136,12 +147,12 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={sending}
-        className="w-full py-4 bg-gradient-to-r from-gold to-gold-light text-black font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(201,168,76,0.4)] transition-all duration-300 cursor-pointer disabled:opacity-50"
+        className="w-full py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer disabled:opacity-50"
       >
         {sending ? "SENDING..." : "REQUEST FREE QUOTE"}
       </button>
 
-      <p className="text-white/20 text-xs text-center">
+      <p className="text-white/20 text-xs text-center font-[family-name:var(--font-body)]">
         We typically respond within a few hours during business hours (Mon-Sat 8AM-6PM).
       </p>
     </form>

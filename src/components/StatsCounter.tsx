@@ -34,8 +34,8 @@ export function StatsCounter({ value, label }: StatsCounterProps) {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      <p className="text-3xl md:text-4xl font-bold text-gradient-gold">{value}</p>
-      <p className="text-white/40 text-sm mt-1 tracking-wider uppercase">{label}</p>
+      <p className="text-3xl md:text-4xl font-bold text-gradient-accent">{value}</p>
+      <p className="text-white/40 text-sm mt-1 tracking-wider uppercase font-[family-name:var(--font-body)]">{label}</p>
     </div>
   );
 }

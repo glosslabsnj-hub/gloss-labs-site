@@ -59,7 +59,7 @@ export function HeroParticles() {
         const currentOpacity = p.opacity * (0.5 + 0.5 * Math.sin(p.pulse));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201, 168, 76, ${currentOpacity})`;
+        ctx.fillStyle = `rgba(59, 130, 246, ${currentOpacity})`;
         ctx.fill();
       });
 
@@ -73,7 +73,7 @@ export function HeroParticles() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(201, 168, 76, ${0.05 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${0.05 * (1 - dist / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

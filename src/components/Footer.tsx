@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="relative bg-charcoal border-t border-gold/10">
-      {/* Gold accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+    <footer className="relative bg-charcoal border-t border-accent/10">
+      {/* Accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -12,20 +12,22 @@ export function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img src="/logo-icon.svg" alt="Gloss Labs" className="w-9 h-9" />
-              <span className="text-lg font-bold tracking-[0.12em] text-gradient-gold">
+              <span className="text-lg font-bold tracking-[0.12em] text-gradient-accent">
                 GLOSS LABS
               </span>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Premium mobile auto detailing in Hamilton, NJ. We come to you.
-              Your car deserves better than a drive-through wash.
+            <p className="text-white/50 text-sm leading-relaxed mb-4 font-[family-name:var(--font-body)]">
+              Premium auto detailing in Hamilton, NJ. Visit our shop or we come to you anywhere in New Jersey.
             </p>
-            <div className="flex gap-4">
+            <p className="text-white/40 text-xs font-[family-name:var(--font-body)]">
+              18 Yorkshire Road, Hamilton, NJ 08610
+            </p>
+            <div className="flex gap-4 mt-4">
               <a
                 href="https://instagram.com/glosslabsnj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold/50 transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -34,7 +36,7 @@ export function Footer() {
               </a>
               <a
                 href="tel:+16097318641"
-                className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold/50 transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
                 aria-label="Call us"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -43,7 +45,7 @@ export function Footer() {
               </a>
               <a
                 href="mailto:glosslabsnj@gmail.com"
-                className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold/50 transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
                 aria-label="Email us"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -55,7 +57,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            <h3 className="text-accent text-sm font-semibold tracking-wider uppercase mb-4 font-[family-name:var(--font-body)]">
               Services
             </h3>
             <ul className="space-y-3">
@@ -70,7 +72,7 @@ export function Footer() {
                 <li key={s}>
                   <Link
                     href="/services"
-                    className="text-white/50 hover:text-gold text-sm transition-colors duration-300 cursor-pointer"
+                    className="text-white/50 hover:text-accent text-sm transition-colors duration-300 cursor-pointer font-[family-name:var(--font-body)]"
                   >
                     {s}
                   </Link>
@@ -81,7 +83,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            <h3 className="text-accent text-sm font-semibold tracking-wider uppercase mb-4 font-[family-name:var(--font-body)]">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -95,7 +97,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/50 hover:text-gold text-sm transition-colors duration-300 cursor-pointer"
+                    className="text-white/50 hover:text-accent text-sm transition-colors duration-300 cursor-pointer font-[family-name:var(--font-body)]"
                   >
                     {link.label}
                   </Link>
@@ -106,20 +108,20 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-gold text-sm font-semibold tracking-wider uppercase mb-4">
+            <h3 className="text-accent text-sm font-semibold tracking-wider uppercase mb-4 font-[family-name:var(--font-body)]">
               Contact
             </h3>
-            <div className="space-y-4 text-sm text-white/50">
+            <div className="space-y-4 text-sm text-white/50 font-[family-name:var(--font-body)]">
               <div>
-                <p className="text-white/70 font-medium">Service Area</p>
-                <p>Hamilton, NJ &amp; surrounding areas</p>
-                <p>Within 25 miles</p>
+                <p className="text-white/70 font-medium">Shop</p>
+                <p>18 Yorkshire Road</p>
+                <p>Hamilton, NJ 08610</p>
               </div>
               <div>
                 <p className="text-white/70 font-medium">Phone</p>
                 <a
                   href="tel:+16097318641"
-                  className="hover:text-gold transition-colors duration-300 cursor-pointer"
+                  className="hover:text-accent transition-colors duration-300 cursor-pointer"
                 >
                   (609) 731-8641
                 </a>
@@ -129,6 +131,10 @@ export function Footer() {
                 <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
+              <div>
+                <p className="text-white/70 font-medium">Mobile Service</p>
+                <p>All of NJ &middot; $50 fee beyond 25mi</p>
+              </div>
             </div>
           </div>
         </div>
@@ -136,9 +142,9 @@ export function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 py-6 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30 font-[family-name:var(--font-body)]">
           <p>&copy; {new Date().getFullYear()} Gloss Labs LLC. All rights reserved.</p>
-          <p>Premium Mobile Auto Detailing &middot; Hamilton, NJ</p>
+          <p>Premium Auto Detailing &middot; Hamilton, NJ</p>
         </div>
       </div>
     </footer>
