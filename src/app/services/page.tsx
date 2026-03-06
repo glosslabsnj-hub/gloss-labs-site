@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Price grid */}
-                    <div className="flex gap-4 shrink-0">
+                    <div className="flex flex-wrap gap-3 sm:gap-4 shrink-0">
                       {[
                         { label: "Sedan", price: service.price },
                         ...(service.priceSuv ? [{ label: "SUV", price: service.priceSuv }] : []),

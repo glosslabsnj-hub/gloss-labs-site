@@ -84,7 +84,7 @@ export function QuoteForm() {
       {/* Vehicle Info */}
       <div className="pt-2">
         <h3 className="text-white/70 text-xs uppercase tracking-wider mb-4 font-[family-name:var(--font-body)]">Vehicle Information</h3>
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
           <div>
             <label htmlFor="vehicle_year" className={labelClass}>Year</label>
             <input id="vehicle_year" name="vehicle_year" type="text" required placeholder="2024" className={inputClass} />
