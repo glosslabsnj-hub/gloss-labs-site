@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { services, siteInfo } from "@/data/content";
 
 export function Footer() {
   return (
@@ -17,14 +18,14 @@ export function Footer() {
               </span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-4 font-[family-name:var(--font-body)]">
-              Premium auto detailing in Hamilton, NJ. Visit our shop or we come to you anywhere in New Jersey.
+              Premium auto detailing in {siteInfo.address.city}, {siteInfo.address.state}. Visit our shop or we come to you anywhere in New Jersey.
             </p>
             <p className="text-white/40 text-xs font-[family-name:var(--font-body)]">
-              18 Yorkshire Road, Hamilton, NJ 08610
+              {siteInfo.address.full}
             </p>
             <div className="flex gap-4 mt-4">
               <a
-                href="https://instagram.com/glosslabsnj"
+                href={siteInfo.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
@@ -35,7 +36,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="tel:+16097318641"
+                href={`tel:${siteInfo.phoneLink}`}
                 className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
                 aria-label="Call us"
               >
@@ -44,7 +45,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:glosslabsnj@gmail.com"
+                href={`mailto:${siteInfo.email}`}
                 className="w-10 h-10 rounded-full border border-accent/20 flex items-center justify-center text-accent/60 hover:text-accent hover:border-accent/50 transition-all duration-300 cursor-pointer"
                 aria-label="Email us"
               >
@@ -61,20 +62,13 @@ export function Footer() {
               Services
             </h3>
             <ul className="space-y-3">
-              {[
-                "Express Wash",
-                "Interior Detail",
-                "Full Detail",
-                "Ceramic Coating",
-                "Paint Correction",
-                "Fleet Services",
-              ].map((s) => (
-                <li key={s}>
+              {services.map((s) => (
+                <li key={s.title}>
                   <Link
                     href="/services"
                     className="text-white/50 hover:text-accent text-sm transition-colors duration-300 cursor-pointer font-[family-name:var(--font-body)]"
                   >
-                    {s}
+                    {s.title}
                   </Link>
                 </li>
               ))}
@@ -114,26 +108,26 @@ export function Footer() {
             <div className="space-y-4 text-sm text-white/50 font-[family-name:var(--font-body)]">
               <div>
                 <p className="text-white/70 font-medium">Shop</p>
-                <p>18 Yorkshire Road</p>
-                <p>Hamilton, NJ 08610</p>
+                <p>{siteInfo.address.street}</p>
+                <p>{siteInfo.address.city}, {siteInfo.address.state} {siteInfo.address.zip}</p>
               </div>
               <div>
                 <p className="text-white/70 font-medium">Phone</p>
                 <a
-                  href="tel:+16097318641"
+                  href={`tel:${siteInfo.phoneLink}`}
                   className="hover:text-accent transition-colors duration-300 cursor-pointer"
                 >
-                  (609) 731-8641
+                  {siteInfo.phone}
                 </a>
               </div>
               <div>
                 <p className="text-white/70 font-medium">Hours</p>
-                <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
-                <p>Sunday: Closed</p>
+                <p>{siteInfo.hours.weekdays}</p>
+                <p>{siteInfo.hours.sunday}</p>
               </div>
               <div>
                 <p className="text-white/70 font-medium">Mobile Service</p>
-                <p>All of NJ &middot; $50 fee beyond 25mi</p>
+                <p>{siteInfo.mobileService}</p>
               </div>
             </div>
           </div>
@@ -144,7 +138,7 @@ export function Footer() {
       <div className="border-t border-white/5 py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30 font-[family-name:var(--font-body)]">
           <p>&copy; {new Date().getFullYear()} Gloss Labs LLC. All rights reserved.</p>
-          <p>It&apos;s Not Clean Until It&apos;s Glossed &middot; Hamilton, NJ</p>
+          <p>{siteInfo.tagline} &middot; {siteInfo.address.city}, {siteInfo.address.state}</p>
         </div>
       </div>
     </footer>

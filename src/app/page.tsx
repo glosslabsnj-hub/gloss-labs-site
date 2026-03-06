@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { HeroParticles } from "@/components/HeroParticles";
+import { HeroSlideshow } from "@/components/HeroSlideshow";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { TestimonialCard } from "@/components/TestimonialCard";
@@ -15,11 +16,8 @@ export default function HomePage() {
     <>
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image - modern performance car */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-lambo.jpg')" }}
-        />
+        {/* Slideshow of premium cars */}
+        <HeroSlideshow />
         {/* Cinematic gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/50 via-[#0A1628]/30 to-[#0A1628]" />
         {/* Blue ambient light accents */}

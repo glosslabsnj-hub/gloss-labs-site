@@ -114,13 +114,13 @@ export const services: Service[] = [
   },
   {
     title: "Ceramic Coating",
-    price: "$499",
-    priceSuv: "$699",
-    priceTruck: "$999",
+    price: "From $499",
+    priceSuv: "From $699",
+    priceTruck: "From $999",
     description:
-      "Professional-grade ceramic coating for long-lasting paint protection. Includes full decontamination, polish, and ceramic application with 2+ year durability.",
+      "Professional-grade ceramic coating for long-lasting paint protection. Includes full decontamination, polish, and ceramic application with 2+ year durability. Final price varies based on vehicle condition, size, and coating package selected.",
     shortDescription:
-      "Professional-grade ceramic protection with 2+ year durability. Hydrophobic, UV-resistant finish.",
+      "Professional-grade ceramic protection with 2+ year durability. Price varies by vehicle condition and package.",
     icon: "shield",
     duration: "Full day",
     category: "protection",
