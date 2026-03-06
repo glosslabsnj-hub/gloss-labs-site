@@ -60,13 +60,18 @@ export default function HomePage() {
           </p>
 
           <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <Link
-              href="/book"
+            <a
+              href={`tel:${siteInfo.phoneLink}`}
               className="group relative w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
             >
-              <span className="relative z-10">BOOK YOUR DETAIL</span>
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                BOOK NOW: {siteInfo.phone}
+              </span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent-light to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
+            </a>
             <Link
               href="/quote"
               className="w-full sm:w-auto px-10 py-4 border border-accent/30 text-accent-light font-semibold text-sm tracking-wider rounded-full hover:bg-accent/10 backdrop-blur-sm transition-all duration-300 cursor-pointer text-center"

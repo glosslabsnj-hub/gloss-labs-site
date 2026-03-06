@@ -50,14 +50,16 @@ html {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
 }
 
-/* Solid card */
+/* Solid card - NO transparency */
 .glass-card {
-  background: #111827;
+  background: #111827 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border: 1px solid rgba(59, 130, 246, 0.15);
 }
 
 .glass-card:hover {
-  background: #1a2436;
+  background: #1a2436 !important;
   border-color: rgba(59, 130, 246, 0.35);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 24px rgba(59, 130, 246, 0.08);
 }
