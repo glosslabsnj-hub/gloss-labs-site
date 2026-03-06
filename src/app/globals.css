@@ -24,7 +24,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -44,9 +43,15 @@ html {
 
 /* Glass card */
 .glass-card {
-  background: rgba(26, 26, 26, 0.8);
+  background: rgba(26, 26, 26, 0.7);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.glass-card:hover {
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(201, 168, 76, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(201, 168, 76, 0.05);
 }
 
 /* Animated underline */
@@ -88,7 +93,7 @@ html {
 .animate-delay-300 { animation-delay: 0.3s; }
 .animate-delay-400 { animation-delay: 0.4s; }
 
-/* Shimmer animation for loading states */
+/* Shimmer animation for premium feel */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -98,4 +103,50 @@ html {
   background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 76, 0.1) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 3s ease infinite;
+}
+
+/* Gold line pulse */
+@keyframes goldPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.gold-pulse {
+  animation: goldPulse 3s ease-in-out infinite;
+}
+
+/* Parallax-like background attachment for desktop */
+@media (min-width: 768px) {
+  .bg-fixed {
+    background-attachment: fixed;
+  }
+}
+
+/* On mobile, disable fixed background (iOS doesn't support it well) */
+@media (max-width: 767px) {
+  .bg-fixed {
+    background-attachment: scroll;
+  }
+}
+
+/* Image hover zoom for gallery */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* Drop shadow for SVG logos */
+.logo-glow {
+  filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.3));
+}
+
+/* Selection color */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #ffffff;
 }

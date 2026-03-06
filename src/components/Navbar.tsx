@@ -25,22 +25,24 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-gold/10 py-3"
-          : "bg-transparent py-5"
+          ? "bg-black/90 backdrop-blur-xl border-b border-gold/10 py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - SVG */}
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold to-gold-light flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-            <span className="text-black font-bold text-lg">G</span>
-          </div>
-          <div>
-            <span className="text-xl font-bold tracking-wider text-gradient-gold">
+          <img
+            src="/logo-icon.svg"
+            alt="Gloss Labs"
+            className="w-10 h-10 transition-transform duration-300 group-hover:scale-110"
+          />
+          <div className="hidden sm:block">
+            <span className="text-xl font-bold tracking-[0.15em] text-gradient-gold">
               GLOSS LABS
             </span>
-            <span className="block text-[10px] tracking-[0.3em] text-muted uppercase">
-              Premium Mobile Detailing
+            <span className="block text-[9px] tracking-[0.25em] text-gold/50 uppercase">
+              Mobile Auto Detailing
             </span>
           </div>
         </Link>
@@ -60,6 +62,15 @@ export function Navbar() {
 
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-4">
+          <a
+            href="tel:+16097318641"
+            className="hidden lg:flex items-center gap-2 text-gold/70 hover:text-gold text-sm transition-colors duration-300 cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            (609) 731-8641
+          </a>
           <Link
             href="/book"
             className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-gold to-gold-light text-black font-semibold text-sm tracking-wider rounded-full hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] transition-all duration-300 cursor-pointer"
@@ -109,6 +120,15 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="tel:+16097318641"
+            className="flex items-center gap-2 text-gold/70 text-sm cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            (609) 731-8641
+          </a>
           <Link
             href="/book"
             onClick={() => setMobileOpen(false)}

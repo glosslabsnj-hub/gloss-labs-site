@@ -11,10 +11,8 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-gold-light flex items-center justify-center">
-                <span className="text-black font-bold">G</span>
-              </div>
-              <span className="text-lg font-bold tracking-wider text-gradient-gold">
+              <img src="/logo-icon.svg" alt="Gloss Labs" className="w-9 h-9" />
+              <span className="text-lg font-bold tracking-[0.12em] text-gradient-gold">
                 GLOSS LABS
               </span>
             </div>

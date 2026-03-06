@@ -4,6 +4,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ProcessStep } from "@/components/ProcessStep";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { StatsCounter } from "@/components/StatsCounter";
+import { GalleryPreview } from "@/components/GalleryPreview";
 
 const services = [
   {
@@ -103,26 +104,42 @@ const processSteps = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
+      {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-charcoal" />
+        {/* Background image */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/hero-car.jpg')" }}
+        />
+        {/* Dark overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+        {/* Gold ambient light */}
+        <div
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(201,168,76,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(201,168,76,0.1) 0%, transparent 40%)",
+              "radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.06) 0%, transparent 50%)",
           }}
         />
         <HeroParticles />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="animate-fade-in-up">
-            <span className="inline-block px-4 py-1.5 border border-gold/30 rounded-full text-gold text-xs tracking-[0.3em] uppercase mb-8">
-              Hamilton, NJ &middot; Mobile Detailing
+          {/* Logo above headline */}
+          <div className="animate-fade-in-up mb-10">
+            <img
+              src="/logo.svg"
+              alt="Gloss Labs - Premium Mobile Auto Detailing"
+              className="h-20 md:h-28 mx-auto drop-shadow-[0_0_30px_rgba(201,168,76,0.3)]"
+            />
+          </div>
+
+          <div className="animate-fade-in-up animate-delay-100">
+            <span className="inline-block px-5 py-2 border border-gold/30 rounded-full text-gold text-xs tracking-[0.3em] uppercase backdrop-blur-sm bg-black/20">
+              Hamilton, NJ &middot; Premium Mobile Detailing
             </span>
           </div>
 
-          <h1 className="animate-fade-in-up animate-delay-100 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
+          <h1 className="animate-fade-in-up animate-delay-200 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mt-8 mb-6">
             <span className="text-white">We Don&apos;t Just</span>
             <br />
             <span className="text-white">Detail Cars.</span>
@@ -130,37 +147,43 @@ export default function HomePage() {
             <span className="text-gradient-gold">We Elevate Them.</span>
           </h1>
 
-          <p className="animate-fade-in-up animate-delay-200 text-white/50 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="animate-fade-in-up animate-delay-300 text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Premium mobile detailing that comes to your door. From express washes
             to ceramic coatings, your vehicle gets the treatment it deserves.
           </p>
 
-          <div className="animate-fade-in-up animate-delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/book"
-              className="group relative px-10 py-4 bg-gradient-to-r from-gold to-gold-light text-black font-bold text-sm tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(201,168,76,0.4)]"
+              className="group relative px-10 py-4 bg-gradient-to-r from-gold to-gold-light text-black font-bold text-sm tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(201,168,76,0.5)]"
             >
               <span className="relative z-10">BOOK YOUR DETAIL</span>
               <div className="absolute inset-0 bg-gradient-to-r from-gold-light to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             <Link
               href="/quote"
-              className="px-10 py-4 border border-gold/30 text-gold font-semibold text-sm tracking-wider rounded-full hover:bg-gold/10 transition-all duration-300 cursor-pointer"
+              className="px-10 py-4 border border-gold/30 text-gold font-semibold text-sm tracking-wider rounded-full hover:bg-gold/10 backdrop-blur-sm transition-all duration-300 cursor-pointer"
             >
               GET A FREE QUOTE
             </Link>
           </div>
         </div>
 
+        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in-up animate-delay-400">
           <span className="text-white/20 text-xs tracking-widest uppercase">Scroll</span>
           <div className="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
         </div>
       </section>
 
-      {/* STATS BAR */}
-      <section className="relative py-12 bg-charcoal border-y border-gold/10">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* ═══════════════ STATS BAR ═══════════════ */}
+      <section className="relative py-12 border-y border-gold/10 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/water-beading.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-sm" />
+        <div className="relative max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatsCounter value="500+" label="Cars Detailed" />
             <StatsCounter value="5.0" label="Google Rating" />
@@ -170,11 +193,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="py-24 md:py-32 bg-black relative">
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: "radial-gradient(circle at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 50%)",
-        }} />
+      {/* ═══════════════ SERVICES ═══════════════ */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        {/* Background image with heavy overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-fixed bg-center"
+          style={{ backgroundImage: "url('/images/dark-porsche.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/90" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 50%)",
+          }}
+        />
+
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-gold text-xs tracking-[0.3em] uppercase">What We Offer</span>
@@ -210,8 +243,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
+      {/* ═══════════════ GALLERY PREVIEW ═══════════════ */}
+      <GalleryPreview />
+
+      {/* ═══════════════ HOW IT WORKS ═══════════════ */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/luxury-detail.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/92" />
         <div className="absolute top-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -229,14 +270,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="py-24 md:py-32 bg-black relative">
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: "radial-gradient(circle at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 50%)",
-        }} />
+      {/* ═══════════════ TESTIMONIALS ═══════════════ */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/car-interior.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/88" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 50%)",
+          }}
+        />
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-gold text-xs tracking-[0.3em] uppercase">Reviews</span>
+            <span className="text-gold text-xs tracking-[0.3em] uppercase">5-Star Reviews</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">
               What Our Clients <span className="text-gradient-gold">Say</span>
             </h2>
@@ -247,17 +296,43 @@ export default function HomePage() {
               <TestimonialCard key={t.name} {...t} />
             ))}
           </div>
+
+          {/* Google Reviews CTA */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-2 text-gold/60 text-sm">
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 fill-gold" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                ))}
+              </div>
+              5.0 on Google &middot; Read all reviews
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ═══════════════ CTA ═══════════════ */}
       <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gold-dark/20 via-black to-black" />
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 60%)",
-        }} />
+        <div
+          className="absolute inset-0 bg-cover bg-fixed bg-center"
+          style={{ backgroundImage: "url('/images/hero-car.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90" />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle at 30% 50%, rgba(201,168,76,0.1) 0%, transparent 60%)",
+          }}
+        />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
+          <img
+            src="/logo-icon.svg"
+            alt=""
+            className="w-16 h-16 mx-auto mb-8 drop-shadow-[0_0_20px_rgba(201,168,76,0.4)]"
+          />
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Ready for the <span className="text-gradient-gold">Gloss Treatment?</span>
           </h2>
