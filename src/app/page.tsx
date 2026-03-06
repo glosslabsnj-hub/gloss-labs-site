@@ -109,10 +109,10 @@ export default function HomePage() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero-car.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero-mercedes.jpg')" }}
         />
         {/* Dark overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black" />
         {/* Gold ambient light */}
         <div
           className="absolute inset-0"
@@ -198,7 +198,7 @@ export default function HomePage() {
         {/* Background image with heavy overlay */}
         <div
           className="absolute inset-0 bg-cover bg-fixed bg-center"
-          style={{ backgroundImage: "url('/images/dark-porsche.jpg')" }}
+          style={{ backgroundImage: "url('/images/bmw-detail.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/90" />
         <div
@@ -274,7 +274,7 @@ export default function HomePage() {
       <section className="py-24 md:py-32 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/car-interior.jpg')" }}
+          style={{ backgroundImage: "url('/images/sports-car-dark.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/88" />
         <div
@@ -317,9 +317,9 @@ export default function HomePage() {
       <section className="py-24 md:py-32 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-fixed bg-center"
-          style={{ backgroundImage: "url('/images/hero-car.jpg')" }}
+          style={{ backgroundImage: "url('/images/dark-porsche.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/75 to-black/85" />
         <div
           className="absolute inset-0"
           style={{
