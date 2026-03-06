@@ -30,6 +30,7 @@ export const siteInfo = {
   },
   mobileService: "All of New Jersey. $50 service fee beyond 25 miles.",
   squareWidgetId: "dvhqf1pkf4hbig/MLX0AATCTSD8M",
+  googleReviewsUrl: "https://www.google.com/maps/place/Gloss+Labs+Auto+NJ/@40.1962857,-74.6824042,17z",
 };
 
 // ─── SERVICES ────────────────────────────────────────────────────────────────

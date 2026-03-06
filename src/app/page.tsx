@@ -222,7 +222,12 @@ export default function HomePage() {
           {/* Google Reviews CTA */}
           <ScrollReveal delay={400}>
             <div className="text-center mt-10 md:mt-12">
-              <div className="inline-flex items-center gap-2 text-accent/60 text-sm font-[family-name:var(--font-body)]">
+              <a
+                href={siteInfo.googleReviewsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-accent/60 hover:text-accent text-sm font-[family-name:var(--font-body)] transition-colors duration-300 cursor-pointer"
+              >
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-4 h-4 fill-accent" viewBox="0 0 24 24">
@@ -230,8 +235,11 @@ export default function HomePage() {
                     </svg>
                   ))}
                 </div>
-                5.0 on Google &middot; Read all reviews
-              </div>
+                5.0 on Google &middot; 35+ Reviews &middot; Read All
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </ScrollReveal>
         </div>
