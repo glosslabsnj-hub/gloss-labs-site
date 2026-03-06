@@ -121,14 +121,30 @@ export function BookingForm() {
   const [booked, setBooked] = useState(false);
   const [error, setError] = useState("");
 
-  // Load services
+  // Load services and auto-select from URL param
   useEffect(() => {
     fetch("/api/availability")
       .then((r) => r.json())
       .then((d) => {
-        setServices(d.services || []);
+        const svcs = d.services || [];
+        setServices(svcs);
         setAddOns(d.addOns || []);
         setLoading(false);
+
+        // Auto-select service from URL ?service=INTERIOR+DETAIL
+        const params = new URLSearchParams(window.location.search);
+        const preselect = params.get("service");
+        if (preselect) {
+          const match = svcs.find((s: ServiceVariation) => s.serviceName === preselect);
+          if (match) {
+            setSelectedService(preselect);
+            // For simple services with one variation, auto-select it
+            const vars = svcs.filter((s: ServiceVariation) => s.serviceName === preselect);
+            if (isSimpleService(preselect) && vars.length === 1) {
+              setSelectedVariation(vars[0]);
+            }
+          }
+        }
       })
       .catch(() => setLoading(false));
   }, []);

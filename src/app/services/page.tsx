@@ -109,7 +109,7 @@ export default function ServicesPage() {
                         <span className="text-accent font-semibold">{service.duration}</span>
                       </div>
                       <Link
-                        href="/book"
+                        href={`/book?service=${encodeURIComponent(service.squareName || service.title.toUpperCase())}`}
                         className="px-8 py-3 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer"
                       >
                         BOOK THIS SERVICE

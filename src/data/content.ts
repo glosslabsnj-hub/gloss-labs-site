@@ -37,6 +37,7 @@ export const siteInfo = {
 
 export interface Service {
   title: string;
+  squareName?: string;
   price: string;
   priceSuv?: string;
   priceTruck?: string;
@@ -51,6 +52,7 @@ export interface Service {
 export const services: Service[] = [
   {
     title: "Exterior Wash",
+    squareName: "EXTERIOR WASH",
     price: "$120",
     priceSuv: "$150",
     priceTruck: "$170",
@@ -73,6 +75,7 @@ export const services: Service[] = [
   },
   {
     title: "Interior Detail",
+    squareName: "INTERIOR DETAIL",
     price: "$200",
     priceSuv: "$230",
     priceTruck: "$300",
@@ -94,8 +97,9 @@ export const services: Service[] = [
   },
   {
     title: "Interior & Exterior Combo",
+    squareName: "INTERIOR & EXTERIOR COMBO",
     price: "$280",
-    priceSuv: "$329",
+    priceSuv: "$330",
     priceTruck: "$380",
     description:
       "Complete inside-and-out refresh for that new-car feel. Combines our full Interior Detail with our Exterior Wash for total vehicle transformation. Safe for coated vehicles. Does not include shampoo extraction, clay bar, or paint correction.",
@@ -115,6 +119,7 @@ export const services: Service[] = [
   },
   {
     title: "Wash, Clay & Seal",
+    squareName: "WASH CLAY & SEAL",
     price: "$200",
     priceSuv: "$250",
     priceTruck: "$280",
@@ -135,6 +140,7 @@ export const services: Service[] = [
   },
   {
     title: "Paint Correction",
+    squareName: "PAINT CORRECTION",
     price: "From $500",
     priceSuv: "From $600",
     priceTruck: "From $700",
@@ -156,7 +162,8 @@ export const services: Service[] = [
   },
   {
     title: "Ceramic Coating",
-    price: "Quote",
+    squareName: "CERAMIC COATING",
+    price: "From $600",
     priceSuv: "Quote",
     priceTruck: "Quote",
     description:
