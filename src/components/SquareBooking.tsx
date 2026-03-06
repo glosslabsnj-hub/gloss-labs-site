@@ -4,6 +4,8 @@ import Link from "next/link";
 import { siteInfo } from "@/data/content";
 
 export function SquareBooking() {
+  const squareUrl = `https://square.site/book/${siteInfo.squareWidgetId}`;
+
   return (
     <div className="text-center py-8">
       <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center">
@@ -13,21 +15,32 @@ export function SquareBooking() {
       </div>
       <h3 className="text-xl font-bold text-white mb-2">Book Your Appointment</h3>
       <p className="text-white/40 text-sm mb-8 max-w-md mx-auto font-[family-name:var(--font-body)]">
-        Call or text us to schedule your detail. We&apos;ll confirm your appointment and get you on the books.
+        Pick a service, choose your time, and you&apos;re booked. Or call us to schedule.
       </p>
 
-      {/* Primary CTA - Call */}
+      {/* Primary CTA - Book Online via Square */}
       <a
-        href={`tel:${siteInfo.phoneLink}`}
+        href={squareUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] transition-all duration-300 cursor-pointer"
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
         </svg>
-        CALL TO BOOK: {siteInfo.phone}
+        BOOK ONLINE
       </a>
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+        <a
+          href={`tel:${siteInfo.phoneLink}`}
+          className="flex items-center gap-2 text-white/40 hover:text-accent transition-colors duration-300 cursor-pointer font-[family-name:var(--font-body)]"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call: {siteInfo.phone}
+        </a>
         <a
           href={`sms:${siteInfo.phoneLink}`}
           className="flex items-center gap-2 text-white/40 hover:text-accent transition-colors duration-300 cursor-pointer font-[family-name:var(--font-body)]"
@@ -55,7 +68,7 @@ export function SquareBooking() {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          Get a free quote
+          Free quote
         </Link>
       </div>
     </div>

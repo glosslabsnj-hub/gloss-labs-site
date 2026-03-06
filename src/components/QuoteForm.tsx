@@ -4,12 +4,12 @@ import { useState } from "react";
 
 const vehicleTypes = ["Sedan", "SUV / Crossover", "Truck / Van", "Sports Car", "Other"];
 const serviceOptions = [
-  "Express Wash",
+  "Exterior Wash",
   "Interior Detail",
-  "Full Detail",
-  "Ceramic Coating",
+  "Interior & Exterior Combo",
+  "Wash, Clay & Seal",
   "Paint Correction",
-  "Fleet Services",
+  "Ceramic Coating",
   "Not sure / Need advice",
 ];
 
