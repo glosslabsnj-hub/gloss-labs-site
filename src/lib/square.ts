@@ -123,6 +123,58 @@ export async function searchAvailability(serviceVariationId: string, startDate: 
   return data.availabilities || [];
 }
 
+// Strip phone to E.164: "(609) 731-8641" -> "+16097318641"
+function formatPhone(raw: string): string {
+  const digits = raw.replace(/\D/g, "");
+  if (digits.length === 10) return `+1${digits}`;
+  if (digits.length === 11 && digits.startsWith("1")) return `+${digits}`;
+  return `+${digits}`;
+}
+
+async function findOrCreateCustomer(params: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+}): Promise<{ customerId: string | null; error: string | null }> {
+  // Search by email first
+  const searchResult = await squareFetch("/customers/search", {
+    method: "POST",
+    body: JSON.stringify({
+      query: {
+        filter: {
+          email_address: { exact: params.email },
+        },
+      },
+    }),
+  });
+
+  if (searchResult.customers?.length > 0) {
+    return { customerId: searchResult.customers[0].id, error: null };
+  }
+
+  // Create new customer
+  const createResult = await squareFetch("/customers", {
+    method: "POST",
+    body: JSON.stringify({
+      given_name: params.firstName,
+      family_name: params.lastName,
+      email_address: params.email,
+      phone_number: formatPhone(params.phone),
+    }),
+  });
+
+  if (createResult.errors?.length > 0) {
+    return { customerId: null, error: createResult.errors[0].detail || "Failed to create customer" };
+  }
+
+  if (!createResult.customer?.id) {
+    return { customerId: null, error: "Customer creation returned no ID" };
+  }
+
+  return { customerId: createResult.customer.id, error: null };
+}
+
 export async function createBooking(params: {
   serviceVariationId: string;
   teamMemberId: string;
@@ -135,33 +187,19 @@ export async function createBooking(params: {
 }) {
   const locationId = process.env.SQUARE_LOCATION_ID;
 
-  const customerData = await squareFetch("/customers/search", {
-    method: "POST",
-    body: JSON.stringify({
-      query: {
-        filter: {
-          email_address: { exact: params.customerEmail },
-        },
-      },
-    }),
+  // Step 1: Find or create customer
+  const { customerId, error: customerError } = await findOrCreateCustomer({
+    firstName: params.customerFirstName,
+    lastName: params.customerLastName,
+    email: params.customerEmail,
+    phone: params.customerPhone,
   });
 
-  let customerId: string;
-  if (customerData.customers?.length > 0) {
-    customerId = customerData.customers[0].id;
-  } else {
-    const newCustomer = await squareFetch("/customers", {
-      method: "POST",
-      body: JSON.stringify({
-        given_name: params.customerFirstName,
-        family_name: params.customerLastName,
-        email_address: params.customerEmail,
-        phone_number: params.customerPhone,
-      }),
-    });
-    customerId = newCustomer.customer?.id;
+  if (customerError || !customerId) {
+    return { errors: [{ detail: customerError || "Could not create customer profile" }] };
   }
 
+  // Step 2: Create the booking
   const booking = await squareFetch("/bookings", {
     method: "POST",
     body: JSON.stringify({
