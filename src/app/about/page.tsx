@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About | Gloss Labs Premium Auto Detailing",
-  description: "Learn about Gloss Labs, Hamilton NJ's premium auto detailing shop. In-shop and mobile service across all of New Jersey.",
-};
+import Link from "next/link";
+import { siteInfo } from "@/data/content";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function AboutPage() {
   return (
@@ -19,56 +17,62 @@ export default function AboutPage() {
           backgroundImage: "radial-gradient(circle at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 50%)",
         }} />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <span className="text-accent text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-body)]">Our Story</span>
-          <h1 className="text-4xl md:text-6xl font-bold mt-3 mb-4">
-            About <span className="text-gradient-accent">Gloss Labs</span>
-          </h1>
+          <ScrollReveal>
+            <span className="text-accent text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-body)]">Our Story</span>
+            <h1 className="text-4xl md:text-6xl font-bold mt-3 mb-4">
+              About <span className="text-gradient-accent">Gloss Labs</span>
+            </h1>
+          </ScrollReveal>
         </div>
       </section>
 
       <section className="pb-24 bg-background">
         <div className="max-w-4xl mx-auto px-6">
           {/* Story */}
-          <div className="glass-card rounded-2xl p-8 md:p-12 mb-8">
-            <h2 className="text-2xl font-bold text-white mb-6">
-              More Than a Car Wash. It&apos;s a <span className="text-gradient-accent">Standard</span>.
-            </h2>
-            <div className="space-y-4 text-white/50 text-sm leading-relaxed font-[family-name:var(--font-body)]">
-              <p>
-                Gloss Labs was born out of a simple frustration: drive-through car washes don&apos;t care about your car. They run it through the same harsh brushes and cheap chemicals as every other vehicle, and call it clean. We knew there had to be a better way.
-              </p>
-              <p>
-                We started Gloss Labs with one goal: give every vehicle the kind of attention and care that only a true enthusiast can deliver. That means hand-washing with pH-balanced products, using professional-grade compounds and coatings, and spending real time on every detail. No shortcuts. No rushing. No compromises.
-              </p>
-              <p>
-                Our shop at <strong className="text-white">18 Yorkshire Road in Hamilton, NJ</strong> is where the magic happens. Equipped with professional lighting, climate control, and every tool needed for perfect results. For customers who prefer convenience, we also offer full mobile service anywhere in New Jersey.
-              </p>
-              <p>
-                From daily drivers to weekend exotics, fleet vans to luxury SUVs, every vehicle gets the Gloss Labs treatment. Visit our shop or we come to you.
-              </p>
+          <ScrollReveal>
+            <div className="glass-card rounded-2xl p-8 md:p-12 mb-8">
+              <h2 className="text-2xl font-bold text-white mb-6">
+                More Than a Car Wash. It&apos;s a <span className="text-gradient-accent">Standard</span>.
+              </h2>
+              <div className="space-y-4 text-white/50 text-sm leading-relaxed font-[family-name:var(--font-body)]">
+                <p>
+                  Gloss Labs was born out of a simple frustration: drive-through car washes don&apos;t care about your car. They run it through the same harsh brushes and cheap chemicals as every other vehicle, and call it clean. We knew there had to be a better way.
+                </p>
+                <p>
+                  We started Gloss Labs with one goal: give every vehicle the kind of attention and care that only a true enthusiast can deliver. That means hand-washing with pH-balanced products, using professional-grade compounds and coatings, and spending real time on every detail. No shortcuts. No rushing. No compromises.
+                </p>
+                <p>
+                  Our shop at <strong className="text-white">{siteInfo.address.full}</strong> is where the magic happens. Equipped with professional lighting, climate control, and every tool needed for perfect results. For customers who prefer convenience, we also offer full mobile service anywhere in New Jersey.
+                </p>
+                <p>
+                  From daily drivers to weekend exotics, fleet vans to luxury SUVs, every vehicle gets the Gloss Labs treatment. Visit our shop or we come to you.
+                </p>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Shop location callout */}
-          <div className="glass-card rounded-2xl p-8 mb-8 border-accent/20">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
-                <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white mb-1">Visit Our Shop</h3>
-                <p className="text-white/50 text-sm font-[family-name:var(--font-body)]">
-                  18 Yorkshire Road, Hamilton, NJ 08610
-                </p>
-                <p className="text-accent/70 text-sm font-[family-name:var(--font-body)]">
-                  Mon-Sat 8AM-6PM &middot; Or we come to you anywhere in NJ
-                </p>
+          <ScrollReveal delay={100} direction="left" distance={30}>
+            <div className="glass-card rounded-2xl p-8 mb-8 border-accent/20">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
+                  <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">Visit Our Shop</h3>
+                  <p className="text-white/50 text-sm font-[family-name:var(--font-body)]">
+                    {siteInfo.address.full}
+                  </p>
+                  <p className="text-accent/70 text-sm font-[family-name:var(--font-body)]">
+                    {siteInfo.hours.weekdays} &middot; Or we come to you anywhere in NJ
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Values */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -100,37 +104,41 @@ export default function AboutPage() {
                   </svg>
                 ),
               },
-            ].map((value) => (
-              <div key={value.title} className="glass-card rounded-2xl p-8 text-center">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mx-auto mb-4">
-                  {value.icon}
+            ].map((value, i) => (
+              <ScrollReveal key={value.title} delay={200 + i * 100} direction="up">
+                <div className="glass-card rounded-2xl p-8 text-center h-full">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mx-auto mb-4">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{value.title}</h3>
+                  <p className="text-white/40 text-sm leading-relaxed font-[family-name:var(--font-body)]">{value.description}</p>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-white/40 text-sm leading-relaxed font-[family-name:var(--font-body)]">{value.description}</p>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to see the <span className="text-gradient-accent">difference</span>?
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
-              <Link
-                href="/book"
-                className="px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer"
-              >
-                BOOK NOW
-              </Link>
-              <Link
-                href="/gallery"
-                className="px-10 py-4 border border-accent/30 text-accent-light font-semibold text-sm tracking-wider rounded-full hover:bg-accent/10 transition-all duration-300 cursor-pointer"
-              >
-                SEE OUR WORK
-              </Link>
+          <ScrollReveal delay={500}>
+            <div className="text-center">
+              <h2 className="text-3xl font-bold text-white mb-4">
+                Ready to see the <span className="text-gradient-accent">difference</span>?
+              </h2>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+                <Link
+                  href="/book"
+                  className="px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer"
+                >
+                  BOOK NOW
+                </Link>
+                <Link
+                  href="/gallery"
+                  className="px-10 py-4 border border-accent/30 text-accent-light font-semibold text-sm tracking-wider rounded-full hover:bg-accent/10 transition-all duration-300 cursor-pointer"
+                >
+                  SEE OUR WORK
+                </Link>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
