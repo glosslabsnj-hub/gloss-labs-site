@@ -40,6 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/logo-icon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -49,7 +52,7 @@ export default function RootLayout({
               name: "Gloss Labs",
               image: "https://glosslabsauto.com/logo.svg",
               url: "https://glosslabsauto.com",
-              telephone: "+16097318641",
+              telephone: "+16099449705",
               email: "glosslabsnj@gmail.com",
               address: {
                 "@type": "PostalAddress",
@@ -95,7 +98,7 @@ export default function RootLayout({
         {/* Sticky mobile CTA bar */}
         <div className="mobile-cta-bar">
           <a
-            href="tel:+16097318641"
+            href="tel:+16099449705"
             className="flex-1 flex items-center justify-center gap-2 py-3 border border-accent/30 text-accent font-semibold text-sm rounded-full"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>

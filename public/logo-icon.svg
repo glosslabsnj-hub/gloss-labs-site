@@ -1,69 +1,86 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
-    <!-- Chrome metallic gradient (8-stop for realism) -->
-    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#94A3B8"/>
-      <stop offset="15%" stop-color="#E2E8F0"/>
-      <stop offset="30%" stop-color="#F8FAFC"/>
-      <stop offset="45%" stop-color="#CBD5E1"/>
-      <stop offset="55%" stop-color="#E2E8F0"/>
-      <stop offset="70%" stop-color="#F1F5F9"/>
-      <stop offset="85%" stop-color="#CBD5E1"/>
-      <stop offset="100%" stop-color="#94A3B8"/>
-    </linearGradient>
-    <!-- Blue accent gradient -->
-    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="50%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#2563EB"/>
-    </linearGradient>
-    <!-- Droplet gradient -->
-    <linearGradient id="droplet" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="40%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#2563EB"/>
-    </linearGradient>
-    <!-- Shine highlight -->
-    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="white" stop-opacity="0.9"/>
+    <!-- Premium dark background gradient -->
+    <radialGradient id="dropBg" cx="45%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#E8F4FF"/>
+      <stop offset="30%" stop-color="#B8D8F8"/>
+      <stop offset="60%" stop-color="#6BA3D6"/>
+      <stop offset="100%" stop-color="#1A5276"/>
+    </radialGradient>
+    <!-- Glossy highlight -->
+    <radialGradient id="highlight" cx="35%" cy="25%" r="30%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Secondary highlight -->
+    <radialGradient id="highlight2" cx="60%" cy="70%" r="20%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Car reflection gradient -->
+    <linearGradient id="carGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A2540" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1A5276" stop-opacity="0.3"/>
     </linearGradient>
-    <!-- Shield fill -->
-    <linearGradient id="shieldFill" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="#0F1D32"/>
-      <stop offset="100%" stop-color="#080E1B"/>
-    </linearGradient>
-    <filter id="innerGlow">
+    <!-- Outer glow -->
+    <filter id="dropShadow">
       <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Inner shadow for depth -->
+    <filter id="innerDepth">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <!-- Clip path for droplet shape -->
+    <clipPath id="dropClip">
+      <path d="M60,8 Q60,8 42,42 C28,64 28,78 60,108 C92,78 92,64 78,42 Q60,8 60,8 Z"/>
+    </clipPath>
   </defs>
 
-  <!-- Shield shape (automotive heritage) -->
-  <path d="M60,6 L108,28 L108,68 Q108,96 60,114 Q12,96 12,68 L12,28 Z"
-        fill="url(#shieldFill)" stroke="url(#chrome)" stroke-width="2.5"/>
-  <!-- Inner shield border -->
-  <path d="M60,14 L102,33 L102,67 Q102,90 60,106 Q18,90 18,67 L18,33 Z"
-        fill="none" stroke="url(#chrome)" stroke-width="0.5" opacity="0.25"/>
+  <!-- === WATER DROPLET === -->
+  <!-- Drop shadow on surface -->
+  <ellipse cx="60" cy="112" rx="18" ry="4" fill="#1A5276" opacity="0.15"/>
 
-  <!-- Stylized water droplet (center) -->
-  <g transform="translate(60, 52)" filter="url(#innerGlow)">
-    <!-- Main droplet -->
-    <path d="M0,-28 Q-3,-20 -14,-4 Q-22,8 -22,16 Q-22,30 0,30 Q22,30 22,16 Q22,8 14,-4 Q3,-20 0,-28 Z"
-          fill="url(#droplet)" opacity="0.9"/>
-    <!-- Chrome shine streak across droplet -->
-    <path d="M-12,2 Q-4,-8 0,-10 Q4,-8 8,0 Q4,8 0,12 Q-6,6 -12,2 Z"
-          fill="url(#shine)" opacity="0.6"/>
-    <!-- Small highlight dot -->
-    <circle cx="-6" cy="-6" r="3" fill="white" opacity="0.7"/>
-    <circle cx="-6" cy="-6" r="1.5" fill="white" opacity="0.9"/>
+  <!-- Main droplet body -->
+  <path d="M60,8 Q60,8 42,42 C28,64 28,78 60,108 C92,78 92,64 78,42 Q60,8 60,8 Z"
+        fill="url(#dropBg)" filter="url(#dropShadow)"/>
+
+  <!-- Thin edge ring for glass-like feel -->
+  <path d="M60,8 Q60,8 42,42 C28,64 28,78 60,108 C92,78 92,64 78,42 Q60,8 60,8 Z"
+        fill="none" stroke="white" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- === CAR SILHOUETTE REFLECTED INSIDE === -->
+  <g clip-path="url(#dropClip)" opacity="0.55">
+    <!-- Horizon line inside droplet -->
+    <line x1="30" y1="72" x2="90" y2="72" stroke="#0A2540" stroke-width="0.5" opacity="0.3"/>
+
+    <!-- Sports car silhouette - low, sleek, unmistakable -->
+    <g transform="translate(60, 72) scale(0.85)" filter="url(#innerDepth)">
+      <!-- Car body -->
+      <path d="M-26,0 L-24,-2 L-18,-3 L-12,-3 L-8,-10 L-2,-12 L8,-12 L16,-10 L20,-4 L24,-3 L26,-2 L26,0 Z"
+            fill="#0A2540" opacity="0.7"/>
+      <!-- Windshield -->
+      <path d="M-6,-10 L-2,-12 L8,-12 L12,-10 Z"
+            fill="#3B82F6" opacity="0.3"/>
+      <!-- Front wheel -->
+      <circle cx="-16" cy="0" r="4" fill="#0A2540" opacity="0.6"/>
+      <circle cx="-16" cy="0" r="2" fill="#1A5276" opacity="0.4"/>
+      <!-- Rear wheel -->
+      <circle cx="18" cy="0" r="4" fill="#0A2540" opacity="0.6"/>
+      <circle cx="18" cy="0" r="2" fill="#1A5276" opacity="0.4"/>
+      <!-- Ground reflection -->
+      <path d="M-26,0 L-24,2 L-18,3 L-12,3 L-8,6 L-2,7 L8,7 L16,6 L20,3 L24,3 L26,2 L26,0 Z"
+            fill="#0A2540" opacity="0.12"/>
+    </g>
   </g>
 
-  <!-- Horizontal chrome line divider -->
-  <line x1="28" y1="88" x2="92" y2="88" stroke="url(#chrome)" stroke-width="0.6" opacity="0.4"/>
-
-  <!-- GLOSS text -->
-  <text x="60" y="102" fill="url(#chrome)" text-anchor="middle"
-        font-family="'Bodoni Moda', 'Didot', Georgia, serif"
-        font-size="13" font-weight="700" letter-spacing="5">GLOSS</text>
+  <!-- === GLOSSY HIGHLIGHTS (on top of everything) === -->
+  <!-- Primary highlight - top left -->
+  <ellipse cx="48" cy="34" rx="14" ry="18" fill="url(#highlight)" transform="rotate(-15, 48, 34)"/>
+  <!-- Small sharp highlight -->
+  <ellipse cx="44" cy="28" rx="4" ry="6" fill="white" opacity="0.7" transform="rotate(-15, 44, 28)"/>
+  <!-- Bottom-right secondary highlight -->
+  <ellipse cx="68" cy="85" rx="8" ry="6" fill="url(#highlight2)"/>
 </svg>

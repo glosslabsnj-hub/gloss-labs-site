@@ -10,9 +10,9 @@
 
 export const siteInfo = {
   name: "Gloss Labs",
-  tagline: "It's Not Clean Until It's Glossed",
-  phone: "(609) 731-8641",
-  phoneLink: "+16097318641",
+  tagline: "It's Not Clean Till It's Gloss",
+  phone: "(609) 944-9705",
+  phoneLink: "+16099449705",
   email: "glosslabsnj@gmail.com",
   instagram: "@glosslabsnj",
   instagramUrl: "https://instagram.com/glosslabsnj",
@@ -192,12 +192,14 @@ export interface AddOn {
 }
 
 export const addOns: AddOn[] = [
-  { title: "Upholstery Shampoo", price: "From $130", description: "Deep carpet and seat shampoo extraction. Sedan $130, SUV $180." },
+  { title: "Upholstery Shampoo", price: "From $70", description: "Deep carpet and seat shampoo extraction. Sedan $70, SUV $90." },
   { title: "Pet Hair Removal", price: "From $75", description: "Specialized extraction of embedded pet hair. Moderate $75, Heavy $125. Must book with interior service." },
   { title: "Odor Removal", price: "$80", description: "Deep cleaning + ozone treatment to neutralize odors at the source. Smoke, pets, spills." },
+  { title: "Headlight Restoration", price: "$99", description: "Restore foggy, yellowed headlights to crystal-clear clarity. Per pair." },
+  { title: "Engine Bay Detail", price: "$69", description: "Degrease, steam clean, and dress your engine bay for a like-new look." },
   { title: "Trim Restoration", price: "Quote", description: "Restore faded plastics to OEM black with ceramic trim coating for long-lasting UV protection." },
-  { title: "Engine Bay Cleaning", price: "Quote", description: "Degrease, steam clean, and dress your engine bay for a like-new look." },
-  { title: "Mobile Service Fee", price: "$50", description: "For locations beyond 25 miles from our Hamilton, NJ shop." },
+  { title: "Windshield Ceramic Coating", price: "$39", description: "Hydrophobic ceramic coating on windshield for improved visibility in rain." },
+  { title: "Wheel Ceramic Coating", price: "$79", description: "Ceramic coating on all 4 wheels for easier cleaning and brake dust protection." },
 ];
 
 // ─── GALLERY ─────────────────────────────────────────────────────────────────

@@ -193,6 +193,7 @@ export async function createBooking(params: {
   customerLastName: string;
   customerEmail: string;
   customerPhone: string;
+  locationType?: "BUSINESS_LOCATION" | "CUSTOMER_LOCATION";
 }) {
   const locationId = process.env.SQUARE_LOCATION_ID;
 
@@ -217,6 +218,7 @@ export async function createBooking(params: {
         customer_id: customerId,
         customer_note: params.customerNote || "",
         start_at: params.startAt,
+        location_type: params.locationType || "BUSINESS_LOCATION",
         appointment_segments: [
           {
             service_variation_id: params.serviceVariationId,

@@ -90,6 +90,15 @@ function orderVehicleSizes(variations: ServiceVariation[]) {
   });
 }
 
+// Format phone input as (XXX) XXX-XXXX
+function formatPhoneInput(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 10);
+  if (digits.length === 0) return "";
+  if (digits.length <= 3) return `(${digits}`;
+  if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 // ── Main ──
 
 export function BookingForm() {
@@ -115,6 +124,8 @@ export function BookingForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [locationType, setLocationType] = useState<"BUSINESS_LOCATION" | "CUSTOMER_LOCATION">("BUSINESS_LOCATION");
+  const [customerAddress, setCustomerAddress] = useState("");
   const [notes, setNotes] = useState("");
 
   const [booking, setBooking] = useState(false);
@@ -243,14 +254,19 @@ export function BookingForm() {
     setBooking(true);
     setError("");
     try {
-      // Build note with add-ons
-      let customerNote = notes;
+      // Build note with add-ons and location info
+      const noteParts: string[] = [];
+      if (locationType === "CUSTOMER_LOCATION" && customerAddress) {
+        noteParts.push(`Mobile service at: ${customerAddress}`);
+      }
       if (selectedAddOns.length > 0) {
         const addOnList = selectedAddOns
           .map((a) => `${a.addOn.name} (${a.addOn.variationName}) - ${formatPrice(a.addOn.priceCents)}`)
           .join(", ");
-        customerNote = `Add-ons: ${addOnList}${notes ? `. Notes: ${notes}` : ""}`;
+        noteParts.push(`Add-ons: ${addOnList}`);
       }
+      if (notes) noteParts.push(`Notes: ${notes}`);
+      const customerNote = noteParts.join(". ");
 
       const res = await fetch("/api/book", {
         method: "POST",
@@ -264,6 +280,7 @@ export function BookingForm() {
           lastName,
           email,
           phone,
+          locationType,
         }),
       });
       const data = await res.json();
@@ -273,7 +290,7 @@ export function BookingForm() {
         setBooked(true);
       }
     } catch {
-      setError("Something went wrong. Please try again or call us at (609) 731-8641.");
+      setError("Something went wrong. Please try again or call us at (609) 944-9705.");
     }
     setBooking(false);
   }
@@ -310,6 +327,9 @@ export function BookingForm() {
         </p>
         <p className="text-accent font-[family-name:var(--font-body)] mb-1">
           {selectedSlot && formatDate(selectedSlot.start_at)} at {selectedSlot && formatTime(selectedSlot.start_at)}
+        </p>
+        <p className="text-white/40 text-sm font-[family-name:var(--font-body)] mb-1">
+          {locationType === "CUSTOMER_LOCATION" ? `Mobile service at: ${customerAddress}` : "At our shop: 18 Yorkshire Rd, Hamilton NJ"}
         </p>
         {selectedAddOns.length > 0 && (
           <p className="text-white/40 text-sm font-[family-name:var(--font-body)] mb-1">
@@ -794,8 +814,60 @@ export function BookingForm() {
 
           <div>
             <label className="block text-white/40 text-xs mb-1.5 font-[family-name:var(--font-body)]">Phone</label>
-            <input type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="(609) 555-0123" className={inputClass} />
+            <input
+              type="tel"
+              required
+              value={phone}
+              onChange={(e) => setPhone(formatPhoneInput(e.target.value))}
+              placeholder="(609) 555-0123"
+              className={inputClass}
+            />
           </div>
+
+          {/* Location Type */}
+          <div>
+            <label className="block text-white/40 text-xs mb-1.5 font-[family-name:var(--font-body)]">Service Location</label>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => { setLocationType("BUSINESS_LOCATION"); setCustomerAddress(""); }}
+                className={`px-4 py-3 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
+                  locationType === "BUSINESS_LOCATION"
+                    ? "border-accent/50 bg-accent/10"
+                    : "border-white/[0.06] bg-white/[0.02] hover:border-white/15"
+                }`}
+              >
+                <span className="block text-sm font-semibold text-white">Our Shop</span>
+                <span className="block text-[10px] text-white/30 mt-0.5 font-[family-name:var(--font-body)]">18 Yorkshire Rd, Hamilton NJ</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setLocationType("CUSTOMER_LOCATION")}
+                className={`px-4 py-3 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
+                  locationType === "CUSTOMER_LOCATION"
+                    ? "border-accent/50 bg-accent/10"
+                    : "border-white/[0.06] bg-white/[0.02] hover:border-white/15"
+                }`}
+              >
+                <span className="block text-sm font-semibold text-white">Mobile</span>
+                <span className="block text-[10px] text-white/30 mt-0.5 font-[family-name:var(--font-body)]">We come to you (+$50 if 25mi+)</span>
+              </button>
+            </div>
+          </div>
+
+          {locationType === "CUSTOMER_LOCATION" && (
+            <div className="animate-fade-in">
+              <label className="block text-white/40 text-xs mb-1.5 font-[family-name:var(--font-body)]">Your Address</label>
+              <input
+                type="text"
+                required
+                value={customerAddress}
+                onChange={(e) => setCustomerAddress(e.target.value)}
+                placeholder="123 Main St, City, NJ 08XXX"
+                className={inputClass}
+              />
+            </div>
+          )}
 
           <div>
             <label className="block text-white/40 text-xs mb-1.5 font-[family-name:var(--font-body)]">Notes (optional)</label>
@@ -815,7 +887,7 @@ export function BookingForm() {
           )}
 
           <button
-            disabled={booking || !firstName || !lastName || !email || !phone}
+            disabled={booking || !firstName || !lastName || !email || !phone || (locationType === "CUSTOMER_LOCATION" && !customerAddress)}
             onClick={handleBook}
             className="w-full py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full disabled:opacity-30 hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 cursor-pointer disabled:cursor-not-allowed"
           >

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gloss Labs Logo Preview</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    body { margin: 0; background: #060D18; color: white; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 40px; gap: 60px; }
+    .section { text-align: center; }
+    .section h2 { color: #64748B; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; }
+    .dark-bg { background: #0A1628; padding: 30px 50px; border-radius: 12px; border: 1px solid rgba(59,130,246,0.1); }
+    .light-bg { background: #F8FAFC; padding: 30px 50px; border-radius: 12px; }
+    .row { display: flex; gap: 60px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .favicon-demo { display: flex; align-items: center; gap: 8px; background: #1a1a2e; padding: 6px 16px; border-radius: 8px 8px 0 0; }
+    .favicon-demo img { width: 16px; height: 16px; }
+    .favicon-demo span { color: #888; font-size: 12px; }
+    .tab-bar { background: #2a2a3e; height: 2px; width: 200px; border-radius: 0 0 4px 4px; }
+    .size-label { color: #64748B; font-size: 11px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <h1 style="color: #3B82F6; letter-spacing: 6px; font-size: 14px; text-transform: uppercase;">Gloss Labs - New Logo System</h1>
+
+  <div class="section">
+    <h2>Full Logo (Website Header)</h2>
+    <div class="dark-bg">
+      <img src="logo.svg" alt="Gloss Labs Logo" style="height: 80px;">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Icon Mark (Navbar / App Icon)</h2>
+    <div class="row">
+      <div>
+        <div class="dark-bg">
+          <img src="logo-icon.svg" alt="Icon" style="width: 80px; height: 80px;">
+        </div>
+        <div class="size-label">80px - Dark BG</div>
+      </div>
+      <div>
+        <div class="dark-bg">
+          <img src="logo-icon.svg" alt="Icon" style="width: 48px; height: 48px;">
+        </div>
+        <div class="size-label">48px - Dark BG</div>
+      </div>
+      <div>
+        <div class="light-bg">
+          <img src="logo-icon.svg" alt="Icon" style="width: 80px; height: 80px;">
+        </div>
+        <div class="size-label">80px - Light BG</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Favicon (Browser Tab)</h2>
+    <div class="row">
+      <div>
+        <div class="favicon-demo">
+          <img src="favicon.svg" alt="Favicon">
+          <span>Gloss Labs | Premium Auto Det...</span>
+        </div>
+        <div class="tab-bar"></div>
+        <div class="size-label">16px - Browser Tab</div>
+      </div>
+      <div>
+        <div class="dark-bg" style="padding: 20px;">
+          <img src="favicon.svg" alt="Favicon" style="width: 32px; height: 32px;">
+        </div>
+        <div class="size-label">32px - Bookmark</div>
+      </div>
+      <div>
+        <div class="dark-bg" style="padding: 20px;">
+          <img src="favicon.svg" alt="Favicon" style="width: 64px; height: 64px;">
+        </div>
+        <div class="size-label">64px - Enlarged</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Navbar Preview</h2>
+    <div style="background: #0A1628; padding: 16px 40px; border-radius: 12px; border: 1px solid rgba(59,130,246,0.1); display: flex; align-items: center; gap: 12px; width: 600px;">
+      <img src="logo-icon.svg" style="width: 40px; height: 40px;">
+      <div>
+        <div style="font-size: 18px; font-weight: 700; letter-spacing: 4px; background: linear-gradient(135deg, #60A5FA, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">GLOSS LABS</div>
+        <div style="font-size: 9px; letter-spacing: 3px; color: #64748B;">IT'S NOT CLEAN TILL IT'S GLOSS</div>
+      </div>
+      <div style="flex: 1;"></div>
+      <div style="display: flex; gap: 24px; font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.6);">
+        <span>SERVICES</span>
+        <span>GALLERY</span>
+        <span>ABOUT</span>
+        <span>CONTACT</span>
+      </div>
+      <div style="padding: 8px 24px; background: linear-gradient(135deg, #3B82F6, #60A5FA); border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 2px;">BOOK NOW</div>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top: 20px; max-width: 500px;">
+    <h2>Concept</h2>
+    <p style="color: #94A3B8; line-height: 1.8; font-size: 14px;">
+      A photorealistic water bead with a <strong style="color: #60A5FA;">sports car silhouette reflected inside</strong>.
+      When a car is properly ceramic coated, water beads up so perfectly you can see reflections in each droplet.
+      That IS the Gloss Labs experience captured in a single icon. Nobody else has this.
+    </p>
+  </div>
+</body>
+</html>
