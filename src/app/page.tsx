@@ -60,17 +60,15 @@ export default function HomePage() {
           </p>
 
           <div className="animate-fade-in-up animate-delay-400 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <a
-              href={siteInfo.squareBookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/book"
               className="group relative w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-accent to-accent-light text-white font-bold text-sm tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 BOOK YOUR DETAIL
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent-light to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
+            </Link>
             <Link
               href="/quote"
               className="w-full sm:w-auto px-10 py-4 border border-accent/30 text-accent-light font-semibold text-sm tracking-wider rounded-full hover:bg-accent/10 backdrop-blur-sm transition-all duration-300 cursor-pointer text-center"
@@ -278,15 +276,13 @@ export default function HomePage() {
               Visit our shop or we come to you.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-              <a
-                href={siteInfo.squareBookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/book"
                 className="group relative w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-accent to-accent-light text-white font-bold tracking-wider rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-[0_0_50px_rgba(59,130,246,0.5)]"
               >
                 <span className="relative z-10">BOOK NOW</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-accent-light to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </a>
+              </Link>
               <a
                 href={`tel:${siteInfo.phoneLink}`}
                 className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 text-accent-light font-semibold tracking-wider cursor-pointer hover:text-white transition-colors duration-300"

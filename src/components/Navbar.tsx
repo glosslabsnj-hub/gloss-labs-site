@@ -34,8 +34,8 @@ export function Navbar() {
             <span className="text-xl font-bold tracking-[0.15em] text-gradient-accent">
               GLOSS LABS
             </span>
-            <span className="block text-[9px] tracking-[0.25em] text-accent/50 uppercase font-[family-name:var(--font-body)]">
-              It&apos;s Not Clean Until It&apos;s Glossed
+            <span className="block text-[10px] tracking-[0.3em] text-silver/70 uppercase font-[family-name:var(--font-body)]">
+              It&apos;s Not Clean Till It&apos;s Gloss
             </span>
           </div>
         </Link>
