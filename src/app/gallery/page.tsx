@@ -36,7 +36,7 @@ export default function GalleryPage() {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  });
+  }, [lightboxIndex, filtered.length]);
 
   return (
     <>

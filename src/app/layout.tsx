@@ -39,6 +39,55 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutoRepair",
+              name: "Gloss Labs",
+              image: "https://glosslabsauto.com/logo.svg",
+              url: "https://glosslabsauto.com",
+              telephone: "+16097318641",
+              email: "glosslabsnj@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "18 Yorkshire Road",
+                addressLocality: "Hamilton",
+                addressRegion: "NJ",
+                postalCode: "08610",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 40.1963,
+                longitude: -74.6824,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  opens: "08:00",
+                  closes: "18:00",
+                },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "35",
+              },
+              priceRange: "$75 - $999",
+              description:
+                "Premium auto detailing in Hamilton, NJ. In-shop and mobile detailing services including interior detail, exterior wash, ceramic coating, and paint correction.",
+              areaServed: {
+                "@type": "State",
+                name: "New Jersey",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${bodoni.variable} ${jost.variable} antialiased`}>
         <Navbar />
         <main>{children}</main>
