@@ -139,7 +139,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <h1 className="animate-fade-in-up animate-delay-200 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mt-8 mb-6">
+          <h1 className="animate-fade-in-up animate-delay-200 text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mt-6 mb-5">
             <span className="text-white">We Don&apos;t Just</span>
             <br />
             <span className="text-white">Detail Cars.</span>
@@ -147,7 +147,7 @@ export default function HomePage() {
             <span className="text-gradient-accent">We Elevate Them.</span>
           </h1>
 
-          <p className="animate-fade-in-up animate-delay-300 text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-[family-name:var(--font-body)]">
+          <p className="animate-fade-in-up animate-delay-300 text-white/60 text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-[family-name:var(--font-body)] px-2">
             Visit our shop in Hamilton or we come to you anywhere in New Jersey.
             From express washes to ceramic coatings, your vehicle gets the treatment it deserves.
           </p>

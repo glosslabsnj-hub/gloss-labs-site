@@ -144,7 +144,7 @@ export function Footer() {
       <div className="border-t border-white/5 py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30 font-[family-name:var(--font-body)]">
           <p>&copy; {new Date().getFullYear()} Gloss Labs LLC. All rights reserved.</p>
-          <p>Premium Auto Detailing &middot; Hamilton, NJ</p>
+          <p>It&apos;s Not Clean Until It&apos;s Glossed &middot; Hamilton, NJ</p>
         </div>
       </div>
     </footer>

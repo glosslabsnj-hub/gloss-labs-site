@@ -159,3 +159,44 @@ html {
   background: rgba(59, 130, 246, 0.3);
   color: #ffffff;
 }
+
+/* Sticky mobile CTA bar */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 12px 16px;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(59, 130, 246, 0.15);
+  display: flex;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .mobile-cta-bar {
+    display: none;
+  }
+}
+
+/* Better mobile touch targets */
+@media (max-width: 767px) {
+  .glass-card {
+    border-radius: 16px;
+  }
+
+  /* Ensure body has bottom padding for sticky CTA bar */
+  main {
+    padding-bottom: 72px;
+  }
+}
+
+/* Smooth loading for background images */
+.bg-image-load {
+  background-color: #0F1D32;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

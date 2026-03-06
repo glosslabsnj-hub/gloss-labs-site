@@ -42,7 +42,7 @@ export function Navbar() {
               GLOSS LABS
             </span>
             <span className="block text-[9px] tracking-[0.25em] text-accent/50 uppercase font-[family-name:var(--font-body)]">
-              Premium Auto Detailing
+              It&apos;s Not Clean Until It&apos;s Glossed
             </span>
           </div>
         </Link>
