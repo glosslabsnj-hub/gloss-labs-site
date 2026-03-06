@@ -206,21 +206,39 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Mike R.",
-    vehicle: "BMW M4",
-    text: "My M4 has never looked this good, not even when I drove it off the lot. The ceramic coating is insane. Water literally jumps off the paint.",
+    name: "AJ Ilyasoff",
+    vehicle: "Tesla Model X",
+    text: "Brought in our Tesla Model X for interior detail & odor removal, Jack did an awesome job. He went above & beyond, threw in extras like an exterior wash & deep cleaning touches we didn't even ask for. Interior looked & smelled brand new. Highly recommend!",
     rating: 5,
   },
   {
-    name: "Sarah T.",
-    vehicle: "Mercedes GLC",
-    text: "Jack came to my office parking lot and detailed my car while I worked. Came out to a car that looked brand new. Already booked my next appointment.",
+    name: "Justin Dempsey",
+    vehicle: "Paint Correction + Ceramic",
+    text: "The paint correction and ceramic coating they applied made the exterior look like a mirror. They even got rid of some stubborn stains I thought were permanent! The attention to detail was incredible. Five stars all the way!",
     rating: 5,
   },
   {
-    name: "David L.",
-    vehicle: "Porsche 911",
-    text: "I don't trust anyone with my 911. But after seeing their work on my buddy's car, I gave them a shot. Best decision I've made. These guys are artists.",
+    name: "Heather Kay",
+    vehicle: "Honda Pilot",
+    text: "My headlights were foggy and yellow and now look crystal clear! It looks like a brand new car! Jack was very professional and you can see his attention to detail and dedication shine through his work. Everything exceeded my expectations.",
+    rating: 5,
+  },
+  {
+    name: "NotThe Dot",
+    vehicle: "Subaru Forester",
+    text: "My 11-year-old Subaru Forester was looking beat up inside and out. The clay bar polish was miraculous! Scratches and dullness that I've seen for years are gone. Stains on my seat that I thought were there forever are now gone. Jack has better communication than most supervisors I've had!",
+    rating: 5,
+  },
+  {
+    name: "Andrew Marra",
+    vehicle: "Jeep Grand Cherokee",
+    text: "When I picked up my SUV, it looked and felt brand new. The exterior was perfect and the interior was spotless down to every detail. As someone who goes to the beach often, Jack went above and beyond getting every trace of sand. Highly recommend!",
+    rating: 5,
+  },
+  {
+    name: "George Martine",
+    vehicle: "Minivan",
+    text: "Our large dog had an accident in the car, the smell was HORRENDOUS! Not only did he get the smell out and ALL the dog hair, he got the interior looking brand NEW! Will be bringing him my Jeep and Harley for detailing.",
     rating: 5,
   },
 ];
@@ -253,9 +271,9 @@ export const processSteps = [
 // ─── STATS ───────────────────────────────────────────────────────────────────
 
 export const stats = [
-  { value: "500+", label: "Cars Detailed" },
+  { value: "35+", label: "5-Star Reviews" },
   { value: "5.0", label: "Google Rating" },
-  { value: "12K", label: "Instagram Followers" },
+  { value: "100%", label: "Satisfaction" },
   { value: "All NJ", label: "Service Area" },
 ];
 

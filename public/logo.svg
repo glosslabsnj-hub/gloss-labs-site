@@ -1,65 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
   <defs>
-    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D1929"/>
+      <stop offset="100%" stop-color="#060E1A"/>
+    </linearGradient>
+    <linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="30%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#93C5FD"/>
+      <stop offset="70%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#E2E8F0"/>
-      <stop offset="25%" stop-color="#CBD5E1"/>
-      <stop offset="50%" stop-color="#F1F5F9"/>
-      <stop offset="75%" stop-color="#94A3B8"/>
+      <stop offset="50%" stop-color="#F8FAFC"/>
       <stop offset="100%" stop-color="#CBD5E1"/>
     </linearGradient>
     <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#3B82F6"/>
-      <stop offset="80%" stop-color="#60A5FA"/>
+      <stop offset="15%" stop-color="#3B82F6"/>
+      <stop offset="85%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="glMonogram" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#60A5FA"/>
-      <stop offset="40%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#2563EB"/>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
-    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="carGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <!-- GL Monogram Mark -->
-  <g transform="translate(52, 80)" filter="url(#softGlow)">
-    <!-- Outer hexagonal frame -->
-    <path d="M0,-42 L36,-21 L36,21 L0,42 L-36,21 L-36,-21 Z"
-          fill="none" stroke="url(#glMonogram)" stroke-width="1.5" opacity="0.4"/>
-    <!-- Inner hexagonal frame -->
-    <path d="M0,-32 L28,-16 L28,16 L0,32 L-28,16 L-28,-16 Z"
-          fill="none" stroke="url(#glMonogram)" stroke-width="0.8" opacity="0.2"/>
+  <!-- ═══ Icon Badge ═══ -->
+  <g transform="translate(55, 60)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="52" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="0" cy="0" r="49" fill="none" stroke="url(#ringGrad)" stroke-width="2" opacity="0.7"/>
+    <circle cx="0" cy="0" r="46" fill="none" stroke="url(#ringGrad)" stroke-width="0.4" opacity="0.3"/>
+    <!-- Dark fill -->
+    <circle cx="0" cy="0" r="45" fill="url(#bgGrad)"/>
+    <!-- Inner highlight -->
+    <ellipse cx="0" cy="-12" rx="30" ry="22" fill="#1E3A5F" opacity="0.1"/>
 
-    <!-- Stylized G -->
-    <text x="-14" y="8" fill="url(#glMonogram)"
-          font-family="'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif"
-          font-size="38" font-weight="700" letter-spacing="-2">G</text>
-    <!-- Stylized L -->
-    <text x="6" y="8" fill="url(#chrome)"
-          font-family="'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif"
-          font-size="38" font-weight="400" letter-spacing="-2">L</text>
+    <!-- Car silhouette -->
+    <g transform="translate(0, -10)" filter="url(#carGlow)">
+      <path d="M-30,5 L-28,4 L-26,2 L-22,-2 L-18,-6 L-12,-9 L-6,-11 L2,-12 L10,-11 L16,-9 L20,-6 L23,-2 L26,1 L28,3 L30,4 L30,6 L28,7 L24,7 L21,4 L18,4 L15,7 L-4,7 L-7,4 L-10,4 L-13,7 L-17,7 L-28,7 L-30,6 Z"
+            fill="url(#carGrad)" opacity="0.95"/>
+      <!-- Windshield -->
+      <path d="M-12,-8 L-4,-11 L6,-11 L12,-8 L16,-4 L-18,-4 Z"
+            fill="#60A5FA" opacity="0.2"/>
+      <!-- Body line -->
+      <path d="M-26,1 L-16,-2 L0,-3 L16,-2 L26,1"
+            fill="none" stroke="#93C5FD" stroke-width="0.3" opacity="0.4"/>
+      <!-- Wheels -->
+      <circle cx="-9" cy="6" r="4" fill="#060E1A" stroke="#60A5FA" stroke-width="0.6" opacity="0.9"/>
+      <circle cx="-9" cy="6" r="1.5" fill="#1E3A5F"/>
+      <circle cx="18" cy="6" r="4" fill="#060E1A" stroke="#60A5FA" stroke-width="0.6" opacity="0.9"/>
+      <circle cx="18" cy="6" r="1.5" fill="#1E3A5F"/>
+      <!-- Headlight -->
+      <ellipse cx="-27" cy="3" rx="2.5" ry="1" fill="#93C5FD" opacity="0.7"/>
+      <!-- Taillight -->
+      <rect x="27" y="2" width="3" height="2" rx="0.5" fill="#EF4444" opacity="0.7"/>
+    </g>
 
-    <!-- Accent dot -->
-    <circle cx="28" cy="-28" r="2" fill="#60A5FA" opacity="0.8"/>
-    <circle cx="28" cy="-28" r="4" fill="#60A5FA" opacity="0.15"/>
+    <!-- Water drops -->
+    <path d="M36,-20 Q37.5,-24 39,-20 Q39,-17.5 37.5,-17 Q36,-17.5 36,-20 Z" fill="url(#dropGrad)" opacity="0.5"/>
+    <path d="M-34,-16 Q-33,-19 -32,-16 Q-32,-14 -33,-13.5 Q-34,-14 -34,-16 Z" fill="url(#dropGrad)" opacity="0.35"/>
+
+    <!-- GLOSS text inside badge -->
+    <text x="0" y="20" fill="white" text-anchor="middle"
+          font-family="'Jost', 'Helvetica Neue', Arial, sans-serif"
+          font-size="13" font-weight="800" letter-spacing="4">GLOSS</text>
+    <!-- Decorative line -->
+    <line x1="-25" y1="25" x2="25" y2="25" stroke="url(#ringGrad)" stroke-width="0.4" opacity="0.4"/>
+    <!-- LABS text inside badge -->
+    <text x="0" y="36" fill="url(#ringGrad)" text-anchor="middle"
+          font-family="'Jost', 'Helvetica Neue', Arial, sans-serif"
+          font-size="10" font-weight="300" letter-spacing="6">LABS</text>
   </g>
 
-  <!-- GLOSS LABS text -->
-  <text x="108" y="88" fill="url(#chrome)"
-        font-family="'Bodoni Moda', 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif"
-        font-size="64" font-weight="400" letter-spacing="16" filter="url(#softGlow)">GLOSS LABS</text>
+  <!-- ═══ Text ═══ -->
+  <!-- GLOSS LABS -->
+  <text x="128" y="58" fill="url(#textGrad)"
+        font-family="'Bodoni Moda', 'Didot', Georgia, serif"
+        font-size="48" font-weight="400" letter-spacing="12" filter="url(#glow)">GLOSS LABS</text>
 
   <!-- Accent rule -->
-  <line x1="112" y1="104" x2="575" y2="104" stroke="url(#accentLine)" stroke-width="0.7"/>
+  <line x1="130" y1="72" x2="500" y2="72" stroke="url(#accentLine)" stroke-width="0.6"/>
 
   <!-- Tagline -->
-  <text x="344" y="132" fill="#94A3B8"
+  <text x="315" y="92" fill="#94A3B8" text-anchor="middle"
         font-family="'Jost', 'Helvetica Neue', sans-serif"
-        font-size="11" font-weight="300" letter-spacing="6" text-anchor="middle">IT'S NOT CLEAN UNTIL IT'S GLOSSED</text>
+        font-size="10" font-weight="300" letter-spacing="5">IT'S NOT CLEAN UNTIL IT'S GLOSSED</text>
 </svg>

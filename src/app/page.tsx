@@ -197,7 +197,7 @@ export default function HomePage() {
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/sports-car-dark.jpg')" }}
+          style={{ backgroundImage: "url('/images/hero-porsche-dark.jpg')" }}
         />
         <div className="absolute inset-0 bg-[#0A1628]/75" />
         <div

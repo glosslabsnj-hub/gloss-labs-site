@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 
 const heroImages = [
   "/images/hero-mercedes.jpg",
+  "/images/hero-mercedes-dark.jpg",
   "/images/bmw-detail.jpg",
   "/images/matte-black.jpg",
-  "/images/sports-car-dark.jpg",
+  "/images/hero-porsche-dark.jpg",
   "/images/hero-car.jpg",
 ];
 
