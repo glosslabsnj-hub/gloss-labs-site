@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { services, siteInfo } from "@/data/content";
+import { services, addOns, siteInfo } from "@/data/content";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function ServicesPage() {
@@ -122,16 +122,36 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* Mobile fee notice */}
-        <ScrollReveal delay={200}>
-          <div className="max-w-5xl mx-auto px-6 mt-8">
-            <div className="glass-card rounded-2xl p-6 text-center">
-              <p className="text-white/50 text-sm font-[family-name:var(--font-body)]">
-                <span className="text-accent font-semibold">Mobile Service Add-On:</span> {siteInfo.mobileService}
+        {/* Add-On Services */}
+        <div className="max-w-5xl mx-auto px-6 mt-16">
+          <ScrollReveal>
+            <div className="text-center mb-8">
+              <span className="text-accent text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-body)]">Extras</span>
+              <h2 className="text-2xl md:text-3xl font-bold mt-2">
+                Add-On <span className="text-gradient-accent">Services</span>
+              </h2>
+              <p className="text-white/40 text-sm mt-2 font-[family-name:var(--font-body)]">
+                Enhance any detail with these additional services.
               </p>
             </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {addOns.map((addon, i) => (
+              <ScrollReveal key={addon.title} delay={i * 60} direction="up" distance={20}>
+                <div className="glass-card rounded-xl p-5 h-full">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-white font-semibold text-sm">{addon.title}</h3>
+                    <span className="text-accent font-bold text-sm shrink-0 ml-2">{addon.price}</span>
+                  </div>
+                  <p className="text-white/40 text-xs leading-relaxed font-[family-name:var(--font-body)]">
+                    {addon.description}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </ScrollReveal>
+        </div>
 
         {/* CTA */}
         <ScrollReveal delay={300}>

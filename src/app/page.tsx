@@ -102,16 +102,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════ SERVICES ═══════════════ */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-fixed bg-center"
-          style={{ backgroundImage: "url('/images/matte-black.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-[#0A1628]/80" />
+      <section className="py-20 md:py-32 relative overflow-hidden bg-[#080f1e]">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "radial-gradient(circle at 50% 0%, rgba(59,130,246,0.06) 0%, transparent 50%)",
+            backgroundImage: "radial-gradient(circle at 50% 0%, rgba(59,130,246,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 100%, rgba(59,130,246,0.04) 0%, transparent 40%)",
           }}
         />
 

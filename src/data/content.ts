@@ -174,6 +174,25 @@ export const services: Service[] = [
   },
 ];
 
+// ─── ADD-ON SERVICES ────────────────────────────────────────────────────────
+
+export interface AddOn {
+  title: string;
+  price: string;
+  description: string;
+}
+
+export const addOns: AddOn[] = [
+  { title: "Engine Bay Cleaning", price: "$50", description: "Degrease, steam clean, and dress your engine bay." },
+  { title: "Headlight Restoration", price: "$75", description: "Remove yellowing and haze for crystal-clear headlights." },
+  { title: "Odor Removal", price: "$75+", description: "Ozone treatment and deep clean to eliminate stubborn odors." },
+  { title: "Pet Hair Removal", price: "$50+", description: "Thorough extraction of embedded pet hair from all surfaces." },
+  { title: "Scratch Removal (Spot)", price: "$50+", description: "Targeted polish to remove minor scratches and scuffs." },
+  { title: "Wheel Coating", price: "$100", description: "Ceramic coating applied to wheels for lasting protection." },
+  { title: "Trim Restoration", price: "$50", description: "Restore faded plastic trim to factory black finish." },
+  { title: "Mobile Service Fee", price: "$50", description: "For locations beyond 25 miles from Hamilton, NJ." },
+];
+
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 
 export interface GalleryItem {
