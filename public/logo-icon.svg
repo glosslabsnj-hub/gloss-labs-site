@@ -1,38 +1,69 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#60A5FA"/>
+    <!-- Chrome metallic gradient (8-stop for realism) -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="15%" stop-color="#E2E8F0"/>
+      <stop offset="30%" stop-color="#F8FAFC"/>
+      <stop offset="45%" stop-color="#CBD5E1"/>
+      <stop offset="55%" stop-color="#E2E8F0"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="85%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F1F5F9"/>
-      <stop offset="100%" stop-color="#CBD5E1"/>
+    <!-- Blue accent gradient -->
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
     </linearGradient>
-    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- Droplet gradient -->
+    <linearGradient id="droplet" x1="30%" y1="0%" x2="70%" y2="100%">
       <stop offset="0%" stop-color="#93C5FD"/>
-      <stop offset="100%" stop-color="#3B82F6"/>
+      <stop offset="40%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
     </linearGradient>
+    <!-- Shine highlight -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Shield fill -->
+    <linearGradient id="shieldFill" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0F1D32"/>
+      <stop offset="100%" stop-color="#080E1B"/>
+    </linearGradient>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <!-- Hexagonal badge shape -->
-  <polygon points="60,4 110,30 110,90 60,116 10,90 10,30"
-           fill="#0D1929" stroke="url(#accentGrad)" stroke-width="2"/>
-  <polygon points="60,10 105,33 105,87 60,110 15,87 15,33"
-           fill="none" stroke="url(#accentGrad)" stroke-width="0.5" opacity="0.3"/>
+  <!-- Shield shape (automotive heritage) -->
+  <path d="M60,6 L108,28 L108,68 Q108,96 60,114 Q12,96 12,68 L12,28 Z"
+        fill="url(#shieldFill)" stroke="url(#chrome)" stroke-width="2.5"/>
+  <!-- Inner shield border -->
+  <path d="M60,14 L102,33 L102,67 Q102,90 60,106 Q18,90 18,67 L18,33 Z"
+        fill="none" stroke="url(#chrome)" stroke-width="0.5" opacity="0.25"/>
 
-  <!-- GL monogram -->
-  <text x="60" y="72" fill="url(#textGrad)" text-anchor="middle"
+  <!-- Stylized water droplet (center) -->
+  <g transform="translate(60, 52)" filter="url(#innerGlow)">
+    <!-- Main droplet -->
+    <path d="M0,-28 Q-3,-20 -14,-4 Q-22,8 -22,16 Q-22,30 0,30 Q22,30 22,16 Q22,8 14,-4 Q3,-20 0,-28 Z"
+          fill="url(#droplet)" opacity="0.9"/>
+    <!-- Chrome shine streak across droplet -->
+    <path d="M-12,2 Q-4,-8 0,-10 Q4,-8 8,0 Q4,8 0,12 Q-6,6 -12,2 Z"
+          fill="url(#shine)" opacity="0.6"/>
+    <!-- Small highlight dot -->
+    <circle cx="-6" cy="-6" r="3" fill="white" opacity="0.7"/>
+    <circle cx="-6" cy="-6" r="1.5" fill="white" opacity="0.9"/>
+  </g>
+
+  <!-- Horizontal chrome line divider -->
+  <line x1="28" y1="88" x2="92" y2="88" stroke="url(#chrome)" stroke-width="0.6" opacity="0.4"/>
+
+  <!-- GLOSS text -->
+  <text x="60" y="102" fill="url(#chrome)" text-anchor="middle"
         font-family="'Bodoni Moda', 'Didot', Georgia, serif"
-        font-size="48" font-weight="700" letter-spacing="2">GL</text>
-
-  <!-- Water drop accent -->
-  <path d="M88,22 Q90,17 92,22 Q92,25.5 90,26.5 Q88,25.5 88,22 Z" fill="url(#dropGrad)" opacity="0.7"/>
-
-  <!-- Shine sparkle -->
-  <circle cx="92" cy="18" r="1.5" fill="white" opacity="0.6"/>
-
-  <!-- Subtle tagline -->
-  <text x="60" y="92" fill="url(#accentGrad)" text-anchor="middle"
-        font-family="'Jost', sans-serif"
-        font-size="7" font-weight="300" letter-spacing="4">AUTO</text>
+        font-size="13" font-weight="700" letter-spacing="5">GLOSS</text>
 </svg>

@@ -1,55 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 100" width="480" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100">
   <defs>
-    <linearGradient id="textMain" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F1F5F9"/>
-      <stop offset="100%" stop-color="#E2E8F0"/>
+    <!-- Chrome metallic gradient (8-stop) -->
+    <linearGradient id="chrome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="15%" stop-color="#E2E8F0"/>
+      <stop offset="30%" stop-color="#F8FAFC"/>
+      <stop offset="45%" stop-color="#CBD5E1"/>
+      <stop offset="55%" stop-color="#E2E8F0"/>
+      <stop offset="70%" stop-color="#F1F5F9"/>
+      <stop offset="85%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
     </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B82F6"/>
-      <stop offset="100%" stop-color="#60A5FA"/>
-    </linearGradient>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
-      <stop offset="20%" stop-color="#3B82F6"/>
-      <stop offset="80%" stop-color="#60A5FA"/>
-      <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
-    </linearGradient>
-    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#93C5FD"/>
+    <!-- Blue accent -->
+    <linearGradient id="blueAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
       <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
+    <!-- Droplet -->
+    <linearGradient id="droplet" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD"/>
+      <stop offset="40%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <!-- Shine -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Shield fill -->
+    <linearGradient id="shieldFill" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0F1D32"/>
+      <stop offset="100%" stop-color="#080E1B"/>
+    </linearGradient>
+    <!-- Accent underline -->
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0"/>
+      <stop offset="15%" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#60A5FA"/>
+      <stop offset="85%" stop-color="#3B82F6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
 
-  <!-- GL hexagonal badge -->
-  <g transform="translate(42, 50)">
-    <polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20"
-             fill="#0D1929" stroke="url(#accentGrad)" stroke-width="1.8"/>
-    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5"
-             fill="none" stroke="url(#accentGrad)" stroke-width="0.4" opacity="0.3"/>
-    <!-- GL letters -->
-    <text x="0" y="8" fill="white" text-anchor="middle"
-          font-family="'Bodoni Moda', 'Didot', Georgia, serif"
-          font-size="32" font-weight="700" letter-spacing="1">GL</text>
-    <!-- Water drop -->
-    <path d="M28,-22 Q29.5,-26 31,-22 Q31,-19.5 29.5,-19 Q28,-19.5 28,-22 Z" fill="url(#dropGrad)" opacity="0.6"/>
-    <circle cx="31" cy="-26" r="1.2" fill="white" opacity="0.5"/>
+  <!-- ═══ Shield Icon ═══ -->
+  <g transform="translate(44, 50)">
+    <!-- Shield -->
+    <path d="M0,-44 L36,-26 L36,8 Q36,34 0,46 Q-36,34 -36,8 L-36,-26 Z"
+          fill="url(#shieldFill)" stroke="url(#chrome)" stroke-width="1.8"/>
+    <path d="M0,-38 L31,-23 L31,6 Q31,28 0,39 Q-31,28 -31,6 L-31,-23 Z"
+          fill="none" stroke="url(#chrome)" stroke-width="0.4" opacity="0.2"/>
+
+    <!-- Water droplet -->
+    <g transform="translate(0, -6)">
+      <path d="M0,-22 Q-2,-16 -10,-4 Q-16,5 -16,11 Q-16,22 0,22 Q16,22 16,11 Q16,5 10,-4 Q2,-16 0,-22 Z"
+            fill="url(#droplet)" opacity="0.9"/>
+      <!-- Shine streak -->
+      <path d="M-8,1 Q-3,-6 0,-8 Q3,-6 6,0 Q3,6 0,8 Q-4,4 -8,1 Z"
+            fill="url(#shine)" opacity="0.5"/>
+      <!-- Highlight -->
+      <circle cx="-4" cy="-4" r="2.2" fill="white" opacity="0.7"/>
+      <circle cx="-4" cy="-4" r="1" fill="white" opacity="0.95"/>
+    </g>
   </g>
 
-  <!-- GLOSS text -->
-  <text x="96" y="52" fill="url(#textMain)"
+  <!-- ═══ Typography ═══ -->
+  <!-- GLOSS -->
+  <text x="100" y="48" fill="url(#chrome)"
         font-family="'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif"
-        font-size="48" font-weight="700" letter-spacing="8">GLOSS</text>
+        font-size="46" font-weight="700" letter-spacing="10" filter="url(#glow)">GLOSS</text>
 
-  <!-- LABS text -->
-  <text x="348" y="52" fill="url(#accentGrad)"
+  <!-- Vertical chrome separator -->
+  <line x1="342" y1="18" x2="342" y2="58" stroke="url(#chrome)" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- LABS -->
+  <text x="356" y="48" fill="url(#blueAccent)"
         font-family="'Bodoni Moda', 'Didot', 'Playfair Display', Georgia, serif"
-        font-size="48" font-weight="300" letter-spacing="8">LABS</text>
+        font-size="46" font-weight="400" letter-spacing="10">LABS</text>
 
   <!-- Accent underline -->
-  <line x1="96" y1="64" x2="468" y2="64" stroke="url(#lineGrad)" stroke-width="0.8"/>
+  <line x1="100" y1="60" x2="500" y2="60" stroke="url(#lineGrad)" stroke-width="0.6"/>
 
   <!-- Tagline -->
-  <text x="282" y="82" fill="#94A3B8" text-anchor="middle"
+  <text x="300" y="78" fill="#64748B" text-anchor="middle"
         font-family="'Jost', 'Helvetica Neue', sans-serif"
-        font-size="9" font-weight="300" letter-spacing="5">PREMIUM AUTO DETAILING</text>
+        font-size="8.5" font-weight="300" letter-spacing="4.5">IT'S NOT CLEAN UNTIL IT'S GLOSSED</text>
 </svg>
