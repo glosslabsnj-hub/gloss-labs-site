@@ -354,8 +354,21 @@ export function BookingForm() {
     );
   }
 
+  const formRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) node.dataset.formTop = "true";
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    const el = document.querySelector('[data-form-top]');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [step, scrollToTop]);
+
   return (
-    <div>
+    <div ref={formRef}>
       {/* Progress bar */}
       <div className="flex items-center gap-2 mb-8">
         {[1, 2, 3].map((s) => (
