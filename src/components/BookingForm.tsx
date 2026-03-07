@@ -692,11 +692,10 @@ export function BookingForm() {
               const d = new Date(date + "T12:00:00");
               const dayName = d.toLocaleDateString("en-US", { weekday: "short" });
               const dayNum = d.getDate();
-              const isSunday = d.getDay() === 0;
               return (
                 <button
                   key={date}
-                  disabled={isSunday}
+                  disabled={false}
                   onClick={() => setSelectedDate(date)}
                   className={`shrink-0 w-14 py-3 rounded-xl border text-center transition-all duration-200 cursor-pointer disabled:opacity-20 disabled:cursor-not-allowed ${
                     selectedDate === date
