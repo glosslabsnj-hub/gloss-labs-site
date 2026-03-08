@@ -132,6 +132,19 @@ export function BookingForm() {
   const [booked, setBooked] = useState(false);
   const [error, setError] = useState("");
 
+  const formRef = useCallback((node: HTMLDivElement | null) => {
+    if (node) node.dataset.formTop = "true";
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    const el = document.querySelector('[data-form-top]');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
+  useEffect(() => {
+    scrollToTop();
+  }, [step, scrollToTop]);
+
   // Load services and auto-select from URL param
   useEffect(() => {
     fetch("/api/availability")
@@ -353,19 +366,6 @@ export function BookingForm() {
       </div>
     );
   }
-
-  const formRef = useCallback((node: HTMLDivElement | null) => {
-    if (node) node.dataset.formTop = "true";
-  }, []);
-
-  const scrollToTop = useCallback(() => {
-    const el = document.querySelector('[data-form-top]');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, []);
-
-  useEffect(() => {
-    scrollToTop();
-  }, [step, scrollToTop]);
 
   return (
     <div ref={formRef}>
