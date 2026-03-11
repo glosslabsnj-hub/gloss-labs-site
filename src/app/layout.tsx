@@ -19,13 +19,13 @@ const jost = Jost({
 export const metadata: Metadata = {
   title: "Gloss Labs | Premium Auto Detailing | Hamilton NJ",
   description:
-    "Hamilton NJ's premier auto detailing shop. In-shop and mobile detailing: interior, exterior, ceramic coating, and paint correction. Visit us at 18 Yorkshire Road or we come to you.",
+    "Hamilton NJ's premier auto detailing shop. Interior, exterior, ceramic coating, and paint correction. Visit us at 18 Yorkshire Road.",
   keywords:
-    "auto detailing, ceramic coating, paint correction, Hamilton NJ, car detailing near me, mobile detailing NJ, in-shop detailing",
+    "auto detailing, ceramic coating, paint correction, Hamilton NJ, car detailing near me, in-shop detailing, premium detailing NJ",
   openGraph: {
     title: "Gloss Labs | Premium Auto Detailing",
     description:
-      "We don't just detail cars — we elevate them. In-shop and mobile detailing in Hamilton, NJ.",
+      "We don't just detail cars, we elevate them. Premium in-shop detailing in Hamilton, NJ.",
     url: "https://glosslabsauto.com",
     siteName: "Gloss Labs",
     type: "website",
@@ -40,6 +40,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Ads conversion tracking */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17970313271" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17970313271');
+
+              // Track phone call clicks as conversions
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a[href^="tel:"]');
+                if (link) {
+                  gtag('event', 'conversion', {
+                    send_to: 'AW-17970313271',
+                    value: 200.0,
+                    currency: 'USD'
+                  });
+                }
+              });
+            `,
+          }}
+        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo-icon.svg" />
@@ -82,7 +106,7 @@ export default function RootLayout({
               },
               priceRange: "$75 - $999",
               description:
-                "Premium auto detailing in Hamilton, NJ. In-shop and mobile detailing services including interior detail, exterior wash, ceramic coating, and paint correction.",
+                "Premium auto detailing in Hamilton, NJ. Interior detail, exterior wash, ceramic coating, and paint correction.",
               areaServed: {
                 "@type": "State",
                 name: "New Jersey",
