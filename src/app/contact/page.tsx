@@ -33,7 +33,7 @@ export default function ContactPage() {
                 href: `tel:${siteInfo.phoneLink}`,
                 title: "Call or Text",
                 value: siteInfo.phone,
-                subtitle: "Mon-Sat 8AM-6PM",
+                subtitle: "Mon-Sun 8AM-7PM",
                 icon: (
                   <svg className="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -103,8 +103,8 @@ export default function ContactPage() {
                       <h3 className="text-white/70 text-xs uppercase tracking-wider mb-2">Hours</h3>
                       <div className="space-y-2">
                         {[
-                          { day: "Monday - Saturday", hours: "8:00 AM - 6:00 PM" },
-                          { day: "Sunday", hours: "Closed" },
+                          { day: "Monday - Friday", hours: "8:00 AM - 7:00 PM" },
+                          { day: "Saturday - Sunday", hours: "8:30 AM - 7:00 PM" },
                         ].map((item) => (
                           <div key={item.day} className="flex items-center justify-between py-1">
                             <span className="text-white/50 text-sm">{item.day}</span>

@@ -25,8 +25,8 @@ export const siteInfo = {
   },
   website: "https://glosslabsauto.com",
   hours: {
-    weekdays: "Mon - Sat: 8:00 AM - 6:00 PM",
-    sunday: "Sunday: Closed",
+    weekdays: "Mon - Fri: 8:00 AM - 7:00 PM",
+    weekend: "Sat - Sun: 8:30 AM - 7:00 PM",
   },
   mobileService: "All of New Jersey. $50 service fee beyond 25 miles.",
   squareBookingUrl: "https://book.squareup.com/appointments/dvhqf1pkf4hbig/MLX0AATCTSD8M",

@@ -153,7 +153,7 @@ export function QuoteForm() {
       </button>
 
       <p className="text-white/20 text-xs text-center font-[family-name:var(--font-body)]">
-        We typically respond within a few hours during business hours (Mon-Sat 8AM-6PM).
+        We typically respond within a few hours during business hours (Mon-Sun 8AM-7PM).
       </p>
     </form>
   );

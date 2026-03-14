@@ -74,7 +74,7 @@ export default function AdsLandingPage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/50">
-            <span>Mon-Sat 8AM-6PM</span>
+            <span>Mon-Sun 8AM-7PM</span>
             <span>18 Yorkshire Rd, Hamilton NJ</span>
             <span>No appointment? No problem.</span>
           </div>
@@ -208,7 +208,7 @@ export default function AdsLandingPage() {
             {siteInfo.address.full}
           </p>
           <p className="text-white/40 text-sm mb-8">
-            {siteInfo.hours.weekdays} &middot; {siteInfo.hours.sunday}
+            {siteInfo.hours.weekdays} &middot; {siteInfo.hours.weekend}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">

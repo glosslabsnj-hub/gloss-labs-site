@@ -123,7 +123,7 @@ export function Footer() {
               <div>
                 <p className="text-white/70 font-medium">Hours</p>
                 <p>{siteInfo.hours.weekdays}</p>
-                <p>{siteInfo.hours.sunday}</p>
+                <p>{siteInfo.hours.weekend}</p>
               </div>
               <div>
                 <p className="text-white/70 font-medium">Mobile Service</p>

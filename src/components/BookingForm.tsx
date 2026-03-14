@@ -126,6 +126,9 @@ export function BookingForm() {
   const [phone, setPhone] = useState("");
   const [locationType, setLocationType] = useState<"BUSINESS_LOCATION" | "CUSTOMER_LOCATION">("BUSINESS_LOCATION");
   const [customerAddress, setCustomerAddress] = useState("");
+  const [vehicleYear, setVehicleYear] = useState("");
+  const [vehicleMake, setVehicleMake] = useState("");
+  const [vehicleModel, setVehicleModel] = useState("");
   const [notes, setNotes] = useState("");
 
   const [booking, setBooking] = useState(false);
@@ -267,8 +270,10 @@ export function BookingForm() {
     setBooking(true);
     setError("");
     try {
-      // Build note with add-ons and location info
+      // Build note with vehicle, add-ons, and location info
       const noteParts: string[] = [];
+      const vehicleStr = [vehicleYear, vehicleMake, vehicleModel].filter(Boolean).join(" ");
+      if (vehicleStr) noteParts.push(`Vehicle: ${vehicleStr}`);
       if (locationType === "CUSTOMER_LOCATION" && customerAddress) {
         noteParts.push(`Mobile service at: ${customerAddress}`);
       }
@@ -286,6 +291,7 @@ export function BookingForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           serviceVariationId: selectedVariation.id,
+          serviceName: selectedVariation.serviceName,
           teamMemberId: selectedSlot.appointment_segments?.[0]?.team_member_id || "",
           startAt: selectedSlot.start_at,
           customerNote,
@@ -294,6 +300,9 @@ export function BookingForm() {
           email,
           phone,
           locationType,
+          vehicleYear: vehicleYear || undefined,
+          vehicleMake: vehicleMake || undefined,
+          vehicleModel: vehicleModel || undefined,
         }),
       });
       const data = await res.json();
@@ -301,6 +310,14 @@ export function BookingForm() {
         setError(data.error);
       } else {
         setBooked(true);
+        // Fire Google Ads conversion on successful booking
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "conversion", {
+            send_to: "AW-17970313271",
+            value: (serviceTotal || 0) / 100,
+            currency: "USD",
+          });
+        }
       }
     } catch {
       setError("Something went wrong. Please try again or call us at (609) 944-9705.");
@@ -834,6 +851,34 @@ export function BookingForm() {
               placeholder="(609) 555-0123"
               className={inputClass}
             />
+          </div>
+
+          {/* Vehicle Info (optional) */}
+          <div>
+            <label className="block text-white/40 text-xs mb-1.5 font-[family-name:var(--font-body)]">Vehicle <span className="text-white/20">(optional)</span></label>
+            <div className="grid grid-cols-3 gap-2">
+              <input
+                type="text"
+                value={vehicleYear}
+                onChange={(e) => setVehicleYear(e.target.value.replace(/\D/g, "").slice(0, 4))}
+                placeholder="Year"
+                className={inputClass}
+              />
+              <input
+                type="text"
+                value={vehicleMake}
+                onChange={(e) => setVehicleMake(e.target.value)}
+                placeholder="Make"
+                className={inputClass}
+              />
+              <input
+                type="text"
+                value={vehicleModel}
+                onChange={(e) => setVehicleModel(e.target.value)}
+                placeholder="Model"
+                className={inputClass}
+              />
+            </div>
           </div>
 
           {/* Location Type */}
