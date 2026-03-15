@@ -202,6 +202,67 @@ export const addOns: AddOn[] = [
   { title: "Wheel Ceramic Coating", price: "$79", description: "Ceramic coating on all 4 wheels for easier cleaning and brake dust protection." },
 ];
 
+// ─── MEMBERSHIP PLANS ────────────────────────────────────────────────────────
+
+export interface MembershipPlan {
+  name: string;
+  frequency: string;
+  description: string;
+  priceCar: string;
+  priceSuv: string;
+  priceTruck: string;
+  includes: string[];
+  highlight?: boolean;
+}
+
+export const membershipPlans: MembershipPlan[] = [
+  {
+    name: "Monthly",
+    frequency: "1 detail / month",
+    description:
+      "Keep your vehicle looking showroom-fresh year-round with a monthly maintenance detail. Ideal for daily drivers and anyone who wants to stay ahead of dirt, pollen, and road grime.",
+    priceCar: "$149",
+    priceSuv: "$179",
+    priceTruck: "$199",
+    includes: [
+      "Exterior hand wash + dry",
+      "Full interior vacuum & wipe-down",
+      "Dashboard, console & door panels cleaned",
+      "Interior and exterior glass streak-free",
+      "Tire dressing (satin finish)",
+      "15% off all add-on services",
+      "Priority scheduling",
+    ],
+  },
+  {
+    name: "Bi-Monthly",
+    frequency: "2 details / month",
+    description:
+      "For owners who demand perfection. Two full maintenance details per month keeps your vehicle in pristine condition at all times. Best value per visit.",
+    priceCar: "$249",
+    priceSuv: "$299",
+    priceTruck: "$349",
+    includes: [
+      "Everything in Monthly, twice per month",
+      "Includes door jamb cleaning each visit",
+      "Includes wheel barrel cleaning each visit",
+      "20% off all add-on services",
+      "10% off ceramic coatings & paint correction",
+      "Priority scheduling (same-day when available)",
+      "Free air freshener each visit",
+    ],
+    highlight: true,
+  },
+];
+
+export const membershipTerms = {
+  commitment: "12-month recurring plan",
+  minimum: "3-month minimum enrollment",
+  billing: "Billed monthly. Cancel after minimum with 30 days notice.",
+  taxNote: "Prices exclude NJ sales tax.",
+  enrollCta: "Call or email to enroll. We'll set up your schedule and preferred service day.",
+};
+
 // ─── GALLERY ─────────────────────────────────────────────────────────────────
 
 export interface GalleryItem {
@@ -310,6 +371,7 @@ export const stats = [
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/membership", label: "Membership" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
