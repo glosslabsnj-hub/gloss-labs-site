@@ -56,9 +56,7 @@ export default function AdsLandingPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a
-              href={siteInfo.squareBookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book"
               className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-10 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-500/25"
             >
               Book Your Detail Today
@@ -105,9 +103,7 @@ export default function AdsLandingPage() {
                 <div className="text-white/40 text-xs mb-4">{svc.duration}</div>
                 <p className="text-white/60 text-sm leading-relaxed mb-4">{svc.shortDescription}</p>
                 <a
-                  href={siteInfo.squareBookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/book"
                   className="block text-center bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 font-semibold text-sm py-2.5 rounded-lg transition-colors"
                 >
                   Book Now
@@ -122,13 +118,13 @@ export default function AdsLandingPage() {
               <h3 className="text-white font-bold text-lg mb-1">Paint Correction</h3>
               <div className="text-blue-400 text-2xl font-bold">From $500</div>
               <p className="text-white/60 text-sm mt-2">Remove scratches, swirls, and oxidation. 1-step or 2-step correction. Your paint restored to showroom condition.</p>
-              <a href={siteInfo.squareBookingUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-blue-400 font-semibold text-sm hover:underline">Book Paint Correction &rarr;</a>
+              <a href="/book" className="inline-block mt-3 text-blue-400 font-semibold text-sm hover:underline">Book Paint Correction &rarr;</a>
             </div>
             <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/20 rounded-2xl p-6">
               <h3 className="text-white font-bold text-lg mb-1">Ceramic Coating</h3>
               <div className="text-blue-400 text-2xl font-bold">From $600</div>
               <p className="text-white/60 text-sm mt-2">1-year, 3-year, or 5-year protection. Professional-grade coatings from CarPro, Gyeon, and Gtechniq. Includes prep wash and decontamination.</p>
-              <a href={siteInfo.squareBookingUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-blue-400 font-semibold text-sm hover:underline">Book Ceramic Coating &rarr;</a>
+              <a href="/book" className="inline-block mt-3 text-blue-400 font-semibold text-sm hover:underline">Book Ceramic Coating &rarr;</a>
             </div>
           </div>
         </div>
@@ -213,9 +209,7 @@ export default function AdsLandingPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a
-              href={siteInfo.squareBookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book"
               className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-bold text-lg px-10 py-4 rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-500/25"
             >
               Book Your Detail
