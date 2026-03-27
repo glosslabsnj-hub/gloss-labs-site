@@ -55,7 +55,7 @@ export default function RootLayout({
                 var link = e.target.closest('a[href^="tel:"]');
                 if (link) {
                   gtag('event', 'conversion', {
-                    send_to: 'AW-17970313271',
+                    send_to: 'AW-17970313271/Vm6NCMHetpAcELfw9PhC',
                     value: 200.0,
                     currency: 'USD'
                   });

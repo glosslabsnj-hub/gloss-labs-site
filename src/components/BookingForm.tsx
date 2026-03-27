@@ -313,7 +313,7 @@ export function BookingForm() {
         // Fire Google Ads conversion on successful booking
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
           window.gtag("event", "conversion", {
-            send_to: "AW-17970313271",
+            send_to: "AW-17970313271/Vm6NCMHetpAcELfw9PhC",
             value: (serviceTotal || 0) / 100,
             currency: "USD",
           });
